@@ -1,0 +1,16 @@
+@use '../global' as *;
+
+.icon-block {
+  align-items: center;
+  color: inherit;
+  display: flex;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  .icon-label {
+    margin-left: 4px;
+  }
+}

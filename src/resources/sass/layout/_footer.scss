@@ -1,0 +1,16 @@
+@use '../global' as *;
+
+.layout-footer {
+  background-color: var(--footer-color);
+  color: var(--white);
+  height: var(--footer-height);
+
+  .footer-container {
+    text-align: center;
+    padding: 4px var(--sp-page-padding-x);
+
+    @include pc-screen() {
+      padding: 4px var(--pc-page-padding-x);
+    }
+  }
+}

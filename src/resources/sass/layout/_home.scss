@@ -1,0 +1,21 @@
+@use '../global' as *;
+
+$mobile-padding: calc(24px + var(--header-height)) 4% 24px 4%;
+$pc-padding: calc(16px + var(--header-height)) 24px 16px 24px;
+
+.layout-home {
+  background-color: var(--main-color);
+  color: var(--black);
+  min-height: calc(100vh - var(--footer-height));
+
+  .home-container {
+    margin: 0 auto;
+    padding: $mobile-padding;
+
+    @include pc-screen() {
+      max-width: 960px;
+      padding: $pc-padding;
+    }
+
+  }
+}

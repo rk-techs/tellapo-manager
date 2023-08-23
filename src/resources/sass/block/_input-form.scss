@@ -1,0 +1,19 @@
+@use '../global' as *;
+
+.input-form-block {
+  background-color: var(--white);
+  border-radius: 4px;
+  margin-bottom: 16px;
+
+  .input-form-body {
+    padding: 16px;
+    border-radius: 0 0 4px 4px;
+  }
+}
+
+.input-form-table {
+  .th-cell,
+  .td-cell {
+    padding: 8px;
+  }
+}

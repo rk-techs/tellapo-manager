@@ -1,0 +1,10 @@
+@use '../global' as *;
+
+.content-header-block {
+  align-items: center;
+  border-bottom: 1px solid var(--gray-medium);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 4px;
+}

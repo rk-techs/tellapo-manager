@@ -1,0 +1,21 @@
+
+// Width utility classes
+@for $i from 1 through 30 {
+  .u-w-#{$i * 8} {
+    width: #{$i * 8}px;
+  }
+}
+
+// Min-width utility classes
+@for $i from 1 through 30 {
+  .u-min-w-#{$i * 8} {
+    min-width: #{$i * 8}px;
+  }
+}
+
+// Max-width utility classes
+@for $i from 1 through 30 {
+  .u-max-w-#{$i * 8} {
+    max-width: #{$i * 8}px;
+  }
+}

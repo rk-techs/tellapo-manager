@@ -1,0 +1,34 @@
+@use '../global' as *;
+
+/* Menu List
+-------------------------*/
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  .menu-item {
+    --sp-cols: 2;
+    --pc-cols: 4;
+
+    padding: 8px;
+    width: calc(100% / var(--sp-cols));
+
+    @include pc-screen() {
+      width: calc(100% / var(--pc-cols));
+    }
+
+    .menu-link {
+      background-color: var(--white);
+      border-radius: 8px;
+      color: var(--link-color);
+      display: block;
+      font-weight: bold;
+      padding: 32px 24px;
+
+      &:hover {
+        box-shadow: 0 0 2rem #d8dde5;
+        opacity: 0.9;
+      }
+    }
+  }
+}

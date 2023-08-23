@@ -1,0 +1,30 @@
+@use '../global' as *;
+
+.title {
+  color: var(--black);
+  font-weight: bold;
+
+  &.title-h1 {
+    font-size: 1.4rem;
+  }
+
+  &.title-h2 {
+    font-size: 1.2rem;
+  }
+
+  &.title-h3 {
+    font-size: 1.2rem;
+  }
+
+  &.title-h4 {
+    font-size: 1rem;
+  }
+
+  &.title-h5 {
+    font-size: 1rem;
+  }
+
+  &.title-h6 {
+    font-size: 1rem;
+  }
+}

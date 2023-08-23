@@ -1,0 +1,7 @@
+$breakpoint-pc: 768px;
+
+@mixin pc-screen() {
+  @media screen and (min-width: $breakpoint-pc) {
+    @content;
+  }
+}

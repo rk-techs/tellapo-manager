@@ -1,0 +1,30 @@
+@use '../global' as *;
+
+.layout-login {
+  background-color: var(--gray-light);
+  min-height: 100vh;
+}
+
+.login-container {
+  padding: 80px 16px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.login-title-block {
+  text-align: center;
+  padding-bottom: 24px;
+}
+
+.login-form-block {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.login-input-row {
+
+  &+.login-input-row {
+    margin-top: 16px;
+  }
+}

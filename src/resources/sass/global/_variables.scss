@@ -1,0 +1,81 @@
+:root {
+  /* Colors
+  -------------------------*/
+  /* Basic */
+  --black: #333;
+  --white: #fff;
+  --gray: #ccc;
+  --gray-light: #ecf0f1;
+  --gray-medium: #ddd;
+  --gray-deep: #808080;
+  --gray-dark: #343a40;
+  --navy: #2c3e50;
+  --red: #ff0000;
+  --red-light: #f8d7da;
+  --red-deep: #721c24;
+  --blue: #0000ff;
+  --blue-light: #0080ff;
+  --blue-sky: #86b4ff;
+  --green: #2ecc71;
+
+  /* Theme */
+  --primary: var(--blue-light);
+  --secondary: var(--gray-deep);
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #555;
+
+  --inactive: rgba(255, 255, 255, 0.5);
+
+  /* Links */
+  --link: #007bff;
+  --link-color: var(--black);
+  --link-bg-color: var(--gray-medium);
+  --link-hover-color: var(--blue);
+
+  /* Buttons */
+  --create-color: var(--green);
+  --store-color: var(--green);
+  --login-color: var(--blue-light);
+  --edit-color: var(--blue-light);
+  --update-color: var(--blue-light);
+  --delete-color: var(--red-deep);
+
+  /* Alerts */
+  --success-bg-color: #08b94e1a;
+  --success-txt-color: #08b94e;
+  --deleted-bg-color: var(--red-light);
+  --deleted-txt-color: var(--red-deep);
+  --error-bg-color: var(--red-light);
+  --error-txt-color: var(--red-deep);
+  --error-txt-color: #d8000c;
+  --warning-bg-color: #f9e79f;
+  --warning-txt-color: #7a650c;
+
+  /* Table */
+  --table-hover-color: #f0f8ff;
+
+  /* Layouts */
+  --footer-color: var(--dark);
+  --header-color: var(--dark);
+  --main-color: var(--gray-light);
+
+  /* Height
+  -------------------------*/
+  --header-height: 40px;
+  --footer-height: 32px;
+
+  /* Padding
+  -------------------------*/
+  --pc-page-padding-x: 24px;
+  --sp-page-padding-x: 4%;
+
+  /* z-index
+  -------------------------*/
+  --z-index-header: 800;
+  --z-index-mask: 900;
+  --z-index-modal: 1000;
+}

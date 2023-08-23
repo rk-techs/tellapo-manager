@@ -1,0 +1,55 @@
+@use '../global' as *;
+
+.row {
+  @include pc-screen() {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.row {
+  &+.row {
+    margin-top: 8px;
+  }
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+.col {
+  &:not(:last-child) {
+    padding-bottom: 8px;
+  }
+
+  @include pc-screen() {
+    &:not(:last-child) {
+      padding-bottom: 0;
+      padding-right: 8px;
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @include pc-screen() {
+      width: percentage($i / 12);
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+
+    &:not(:last-child) {
+      padding-bottom: 8px;
+    }
+
+    @include pc-screen() {
+      &:not(:last-child) {
+        padding-bottom: 0;
+        padding-right: 8px;
+      }
+    }
+  }
+}

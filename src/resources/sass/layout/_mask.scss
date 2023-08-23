@@ -1,0 +1,21 @@
+body {
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
+.layout-mask {
+  background: rgba(0, 0, 0, 0.4);
+  bottom: 0;
+  display: none;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: var(--z-index-mask);
+
+  &.show {
+    display: block;
+  }
+}
