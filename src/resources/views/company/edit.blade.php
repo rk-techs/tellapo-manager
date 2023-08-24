@@ -14,8 +14,15 @@
                 </div>
             </div>
 
-            {{-- <form id="inputForm" action="{{ route('company.update') }}" method="POST"> --}}
-                {{-- @csrf --}}
+            @if ($errors->any())
+            <div class="alert alert-error">
+                入力エラーが{{ $errors->count() }}件あります。
+            </div>
+            @endif
+
+            <form id="inputForm" action="{{ route('company.update', ['id' => $company->id]) }}" method="POST">
+                @csrf
+                @method('PATCH')
                 <div class="input-form-block">
                     <div class="input-form-body">
 
@@ -130,7 +137,7 @@
 
                     </div>
                 </div>
-            {{-- </form> --}}
+            </form>
 
         </div>
     </main>
