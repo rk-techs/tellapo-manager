@@ -23,6 +23,8 @@ class Company extends Model
         'annual_sales',          // 年商
         'listed',                // 上場しているかどうか
         'established_at',        // 設立日
-        'corporate_number'       // 法人番号
+        'corporate_number',      // 法人番号
+        'prospect_rating',       // 見込み度
+        'employee_id',           // テレアポ担当者ID
     ];
 }

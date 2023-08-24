@@ -27,6 +27,9 @@ return new class extends Migration
             $table->string('listed')->nullable()->comment('上場しているかどうか');
             $table->string('established_at')->nullable()->comment('設立日');
             $table->string('corporate_number')->nullable()->comment('法人番号');
+            $table->unsignedTinyInteger('prospect_rating')->nullable()->comment('見込み度');
+            $table->unsignedBigInteger('employee_id')->nullable()->comment('テレアポ担当者ID');
+            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('set null');
             $table->timestamps();
         });
     }
@@ -36,6 +39,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('companies', function (Blueprint $table) {
+            $table->dropForeign(['employee_id']);
+        });
         Schema::dropIfExists('companies');
     }
 };
