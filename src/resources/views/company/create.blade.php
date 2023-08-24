@@ -26,6 +26,11 @@
                             'required' => true,
                         ])
                         @include('company.components.form-input', [
+                            'id' => 'branchNameInput',
+                            'label' => '事業所',
+                            'name' => 'branch_name',
+                        ])
+                        @include('company.components.form-input', [
                             'id' => 'postalCodeInput',
                             'label' => '郵便番号',
                             'name' => 'postal_code',

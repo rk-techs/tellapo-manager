@@ -12,6 +12,7 @@ class Company extends Model
 
     protected $fillable = [
         'name',                  // 会社名
+        'branch_name',           // 事業所
         'postal_code',           // 郵便番号
         'address',               // 住所
         'tel',                   // 電話番号

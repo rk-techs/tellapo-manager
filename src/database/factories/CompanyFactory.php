@@ -18,6 +18,7 @@ class CompanyFactory extends Factory
     {
         return [
             'name'                  => $this->faker->company,
+            'branch_name'           => $this->faker->randomElement(['本社', '東京支店', '大阪支店', '名古屋事業所', '福岡事業所', null]),
             'postal_code'           => $this->faker->postcode,
             'address'               => $this->faker->address,
             'tel'                   => $this->faker->phoneNumber,

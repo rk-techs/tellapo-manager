@@ -4,6 +4,7 @@
             <tr class="table-row">
                 <th class="th-cell col-fixed">操作</th>
                 <th class="th-cell">会社名</th>
+                <th class="th-cell">事業所</th>
                 <th class="th-cell">郵便番号</th>
                 <th class="th-cell">住所</th>
                 <th class="th-cell">電話番号</th>
@@ -28,6 +29,7 @@
                         <a href="" class="btn-sm">編集</a>
                     </td>
                     <td class="td-cell u-min-w-160">{{ $company->name }}</td>
+                    <td class="td-cell u-min-w-160">{{ $company->branch_name }}</td>
                     <td class="td-cell u-min-w-120">{{ $company->postal_code }}</td>
                     <td class="td-cell is-ellipsis">{{ $company->address }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->tel }}</td>
