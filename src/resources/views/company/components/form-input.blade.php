@@ -7,7 +7,7 @@
             @endif
         </label>
         <input id="{{ $id }}" type="{{ $type ?? 'text' }}" class="input-field @error($name) is-invalid @enderror"
-            name="{{ $name }}" value="{{ old($name) }}">
+            name="{{ $name }}" value="{{ old($name, $model->{$name} ?? null) }}">
         @error($name)
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror

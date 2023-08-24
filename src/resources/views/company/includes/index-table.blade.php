@@ -26,7 +26,7 @@
             @foreach($companies as $company)
                 <tr class="table-row is-hoverable">
                     <td class="td-cell col-fixed">
-                        <a href="" class="btn-sm">編集</a>
+                        <a href="{{ route('company.edit', ['id' => $company->id]) }}" class="btn-sm">編集</a>
                     </td>
                     <td class="td-cell u-min-w-160">{{ $company->name }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->branch_name }}</td>

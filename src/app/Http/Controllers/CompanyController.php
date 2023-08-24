@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Models\Company;
 use App\Models\Employee;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Log;
 
 class CompanyController extends Controller
 {
@@ -47,5 +49,21 @@ class CompanyController extends Controller
                 'action'  => 'success',
                 'message' => "ID:{$company->id}を登録しました。"
             ]);
+    }
+
+    public function edit(string $id)
+    {
+        try {
+            $company = Company::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            Log::error($e->getMessage() . ' in CompnayController');
+            return redirect()
+                ->route('company.index')
+                ->with(['action' => 'error', 'message' => 'Compnay not found...']);
+        }
+
+        $employees = Employee::all();
+
+        return view('company.edit', compact('company', 'employees'));
     }
 }
