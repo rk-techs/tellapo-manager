@@ -105,4 +105,26 @@ class CompanyController extends Controller
                 'message' => "ID:{$company->id}を更新しました。"
             ]);
     }
+
+    public function destroy(string $id)
+    {
+        try {
+            $company = Company::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            Log::error($e->getMessage() . ' in CompnayController');
+            return redirect()
+                ->route('company.index')
+                ->with(['action' => 'error', 'message' => 'Compnay not found...']);
+        }
+
+        // TODO: 子テーブル追加後に存在チェック処理を入れる
+        $company->delete();
+
+        return redirect()
+        ->route('company.index')
+        ->with([
+            'action'  => 'deleted',
+            'message' => "ID:{$company->id}を削除しました。"
+        ]);
+    }
 }

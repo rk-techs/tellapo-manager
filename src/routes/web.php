@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/company', [CompanyController::class, 'store'])->name('company.store');
     Route::get('/company/{id}/edit', [CompanyController::class, 'edit'])->name('company.edit');
     Route::patch('/company/{id}', [CompanyController::class, 'update'])->name('company.update');
+    Route::delete('/company/{id}', [CompanyController::class, 'destroy'])->name('company.destroy');
 
 });
 

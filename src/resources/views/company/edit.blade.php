@@ -154,9 +154,9 @@
                 キャンセル
             </button>
             <div class="delete-form-wrapper">
-                {{-- <form id="deleteForm" action="{{ route('user.destroy', ['id' => $user->id]) }}" method="POST"> --}}
-                    {{-- @csrf --}}
-                    {{-- @method('DELETE') --}}
+                <form id="deleteForm" action="{{ route('company.destroy', ['id' => $company->id]) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
                     <button id="deleteFormTrigger" class="icon-block">
                         @push('script')
                             <script src="{{ asset('js/delete-form.js') }}"></script>
@@ -165,7 +165,7 @@
                             delete
                         </span>
                     </button>
-                {{-- </form> --}}
+                </form>
             </div>
         </div>
     </div>
