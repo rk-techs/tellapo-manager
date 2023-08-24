@@ -67,55 +67,7 @@
 
             @include('components.alert', ['action' => session('action')])
 
-            <div class="table-block is-scrollable">
-                <table class="table">
-                    <thead class="table-header">
-                        <tr class="table-row">
-                            <th class="th-cell">操作</th>
-                            <th class="th-cell">会社名</th>
-                            <th class="th-cell">郵便番号</th>
-                            <th class="th-cell">住所</th>
-                            <th class="th-cell">電話番号</th>
-                            <th class="th-cell">FAX</th>
-                            <th class="th-cell">Email</th>
-                            <th class="th-cell">会社URL</th>
-                            <th class="th-cell">業種</th>
-                            <th class="th-cell">資本金</th>
-                            <th class="th-cell">従業員数</th>
-                            <th class="th-cell">年商</th>
-                            <th class="th-cell">上場しているか</th>
-                            <th class="th-cell">設立日</th>
-                            <th class="th-cell">法人番号</th>
-                            <th class="th-cell">見込み度</th>
-                            <th class="th-cell">テレアポ担当者ID</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-body">
-                        @foreach($companies as $company)
-                            <tr class="table-row">
-                                <td class="td-cell u-max-w-16">edit</td>
-                                <td class="td-cell">{{ $company->name }}</td>
-                                <td class="td-cell">{{ $company->postal_code }}</td>
-                                <td class="td-cell">{{ $company->address }}</td>
-                                <td class="td-cell">{{ $company->tel }}</td>
-                                <td class="td-cell">{{ $company->fax }}</td>
-                                <td class="td-cell">{{ $company->email }}</td>
-                                <td class="td-cell">{{ $company->website }}</td>
-                                <td class="td-cell">{{ $company->industry }}</td>
-                                <td class="td-cell">{{ $company->capital }}</td>
-                                <td class="td-cell">{{ $company->number_of_employees }}</td>
-                                <td class="td-cell">{{ $company->annual_sales }}</td>
-                                <td class="td-cell">{{ $company->listed }}</td>
-                                <td class="td-cell">{{ $company->established_at }}</td>
-                                <td class="td-cell">{{ $company->corporate_number }}</td>
-                                <td class="td-cell">{{ $company->prospect_rating }}</td>
-                                <td class="td-cell">{{ $company->employee_id }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-
-            </div>
+            @include('company.includes.index-table')
 
         </div>
     </main>
