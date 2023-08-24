@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Company extends Model
 {
@@ -27,4 +28,15 @@ class Company extends Model
         'prospect_rating',       // 見込み度
         'employee_id',           // テレアポ担当者ID
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relationships
+    |--------------------------------------------------------------------------
+    |
+    */
+    public function employee(): BelongsTo
+    {
+        return $this->belongsTo(Employee::class);
+    }
 }

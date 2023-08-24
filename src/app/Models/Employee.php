@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Employee extends Model
 {
@@ -16,4 +17,17 @@ class Employee extends Model
         'resignation_date',
         'remark',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relationships
+    |--------------------------------------------------------------------------
+    |
+    */
+
+
+    public function companies(): HasMany
+    {
+        return $this->hasMany(Company::class);
+    }
 }
