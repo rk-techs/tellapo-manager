@@ -65,6 +65,8 @@
                 </div>
             </div>
 
+            @include('components.alert', ['action' => session('action')])
+
             <div class="table-block is-scrollable">
                 <table class="table">
                     <thead class="table-header">

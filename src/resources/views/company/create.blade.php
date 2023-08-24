@@ -14,8 +14,8 @@
                 </div>
             </div>
 
-            {{-- <form id="inputForm" action="{{ route('company.store') }}" method="POST"> --}}
-            {{-- @csrf --}}
+            <form id="inputForm" action="{{ route('company.store') }}" method="POST">
+            @csrf
             <div class="input-form-block">
                 <div class="input-form-body">
 
@@ -38,15 +38,20 @@
 
                 </div>
             </div>
-            {{-- </form> --}}
+            </form>
 
         </div>
     </main>
 
     <div class="layout-operation">
         <div class="operation-container">
-            <button class="btn btn-store u-mr-3">保存</button>
-            <button class="btn btn-secondary">キャンセル</button>
+            <button id="inputFormTrigger" class="btn btn-store u-mr-3">
+                @push('script')
+                    <script src="{{ asset('js/input-form.js') }}"></script>
+                @endpush
+                保存
+            </button>
+            <a href="{{ route('company.index') }}" class="btn btn-secondary">キャンセル</a>
         </div>
     </div>
 @endsection
