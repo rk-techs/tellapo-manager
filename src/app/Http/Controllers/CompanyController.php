@@ -16,7 +16,8 @@ class CompanyController extends Controller
 
     public function create()
     {
-        return view('company.create');
+        $employees = Employee::all();
+        return view('company.create', compact('employees'));
     }
 
     public function store(StoreCompanyRequest $request)

@@ -34,7 +34,15 @@
                     @include('company.components.input', ['id' => 'establishedAtInput', 'label' => '設立日', 'name' => 'established_at'])
                     @include('company.components.input', ['id' => 'corporateNumberInput', 'label' => '法人番号', 'name' => 'corporate_number'])
                     @include('company.components.input', ['id' => 'prospectRatingInput', 'label' => '見込み度', 'name' => 'prospect_rating'])
-                    @include('company.components.input', ['id' => 'employeeIdInput', 'label' => 'テレアポ担当者ID', 'name' => 'employee_id'])
+                    @include('company.components.form-select', [
+                            'label'   => 'テレアポ担当者ID',
+                            'name'    => 'employee_id',
+                            'id'      => 'employeeIdInput',
+                            'options' => $employees,
+                            'displayAttribute' => 'id',
+                            'isRequired' => false,
+                        ])
+
 
                 </div>
             </div>
