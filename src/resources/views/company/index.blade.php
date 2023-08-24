@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    取引先一覧 | {{ config('app.name') }}
+    企業リスト | {{ config('app.name') }}
 @endsection
 
 @section('content')
@@ -10,10 +10,10 @@
 
             <div class="content-header-block">
                 <div class="title title-h2">
-                    取引先一覧
+                    企業リスト
                 </div>
                 <div>
-                    <a href="{{ route('customer.create') }}" class="btn btn-create">取引先登録</a>
+                    <a href="{{ route('company.create') }}" class="btn btn-create">企業登録</a>
                 </div>
             </div>
 
@@ -65,28 +65,9 @@
                 </div>
             </div>
 
-            <div class="table-block is-scrollable">
-                <table class="table">
-                    <thead class="table-header">
-                        <tr class="table-row">
-                            <th class="th-cell">{{-- 操作 --}}</th>
-                            <th class="th-cell">name</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-body">
+            @include('components.alert', ['action' => session('action')])
 
-                        <tr class="table-row">
-                            <td class="td-cell u-max-w-16">
-                                edit
-                            </td>
-                            <td class="td-cell">
-                                名前
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
+            @include('company.includes.index-table')
 
         </div>
     </main>

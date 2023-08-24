@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,9 +33,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/user/{id}', [UserController::class, 'update'])->name('user.update');
     Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 
-    // Customer
-    Route::get('/customer', [CustomerController::class, 'index'])->name('customer.index');
-    Route::get('/customer/create', [CustomerController::class, 'create'])->name('customer.create');
+    // Company
+    Route::get('/company', [CompanyController::class, 'index'])->name('company.index');
+    Route::get('/company/create', [CompanyController::class, 'create'])->name('company.create');
+    Route::post('/company', [CompanyController::class, 'store'])->name('company.store');
+    Route::get('/company/{id}/edit', [CompanyController::class, 'edit'])->name('company.edit');
+    Route::patch('/company/{id}', [CompanyController::class, 'update'])->name('company.update');
+    Route::delete('/company/{id}', [CompanyController::class, 'destroy'])->name('company.destroy');
 
 });
 
