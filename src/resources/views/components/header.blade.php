@@ -9,7 +9,7 @@
             <a href="/" class="title-link">{{ config('app.name') }} </a>
         </div>
         <div class="header-nav">
-            <div class="nav-item {{ Request::is('home') ? 'active' : '' }}">
+            <div class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                 <a href="{{ route('home') }}" class="nav-link">HOME</a>
             </div>
             <div class="nav-item {{ Request::is('user*') ? 'active' : '' }}">
