@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -39,5 +41,47 @@ class Company extends Model
     public function employee(): BelongsTo
     {
         return $this->belongsTo(Employee::class);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Local Scopes
+    |--------------------------------------------------------------------------
+    |
+    */
+    public function scopeSearchById(Builder $query, ?int $id): Builder
+    {
+        if ($id) {
+            return $query->where('id', $id);
+        }
+        return $query;
+    }
+
+    public function scopeSearchByKeyword(Builder $query, ?string $keyword): Builder
+    {
+        if ($keyword) {
+            return $query->where('name', 'like', "%{$keyword}%")
+                ->orWhere('branch_name', 'like', "%{$keyword}%");
+        }
+        return $query;
+    }
+
+    public function scopeOrderByField(Builder $query, ?string $sortField, ?string $sortType): Builder
+    {
+        if ($sortField && $sortType) {
+            return $query->orderBy($sortField, $sortType);
+        }
+        return $query;
+    }
+
+    public function scopeSearchByDateRange(Builder $query, ?string $dateColumn, ?string $startDate, ?string $endDate): Builder
+    {
+        if ($dateColumn && ($startDate || $endDate)) {
+            $startDate = $startDate ?? '0000-01-01';
+            $endDate   = $endDate ? Carbon::parse($endDate)->endOfDay()->toDateTimeString() : '9999-12-31 23:59:59';
+            return $query->whereBetween($dateColumn, [$startDate, $endDate]);
+        }
+
+        return $query;
     }
 }
