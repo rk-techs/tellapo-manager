@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -39,5 +40,28 @@ class Company extends Model
     public function employee(): BelongsTo
     {
         return $this->belongsTo(Employee::class);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Local Scopes
+    |--------------------------------------------------------------------------
+    |
+    */
+    public function scopeSearchById(Builder $query, ?int $id): Builder
+    {
+        if ($id) {
+            return $query->where('id', $id);
+        }
+        return $query;
+    }
+
+    public function scopeSearchByKeyword(Builder $query, ?string $keyword): Builder
+    {
+        if ($keyword) {
+            return $query->where('name', 'like', "%{$keyword}%")
+                ->orWhere('branch_name', 'like', "%{$keyword}%");
+        }
+        return $query;
     }
 }

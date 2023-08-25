@@ -37,7 +37,10 @@
                 <button class="btn btn-primary u-mr-3">検索開始</button>
                 <a href="{{ route('company.index') }}" class="btn btn-secondary">リセット</a>
             </div>
-            <div class="search-info">検索結果 : XX 件</div>
+            {{-- Search Result --}}
+            @if (!empty(request()->query()))
+            <div class="search-info">検索結果 : {{ $count }} 件</div>
+            @endif
         </div>
     </form>
 </div>

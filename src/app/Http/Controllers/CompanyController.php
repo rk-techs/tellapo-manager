@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SearchCompanyRequest;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
 use App\Models\Company;
@@ -11,10 +12,16 @@ use Illuminate\Support\Facades\Log;
 
 class CompanyController extends Controller
 {
-    public function index()
+    public function index(SearchCompanyRequest $request)
     {
-        $companies = Company::all();
-        return view('company.index', compact('companies'));
+        $companiesQuery = Company::query()
+            ->searchById($request->get('id'))
+            ->searchByKeyword($request->get('keyword'));
+
+        $count     = $companiesQuery->count();
+        $companies = $companiesQuery->simplePaginate(50)->withQueryString();
+
+        return view('company.index', compact('companies', 'count'));
     }
 
     public function create()
@@ -121,10 +128,10 @@ class CompanyController extends Controller
         $company->delete();
 
         return redirect()
-        ->route('company.index')
-        ->with([
-            'action'  => 'deleted',
-            'message' => "ID:{$company->id}を削除しました。"
-        ]);
+            ->route('company.index')
+            ->with([
+                'action'  => 'deleted',
+                'message' => "ID:{$company->id}を削除しました。"
+            ]);
     }
 }
