@@ -64,4 +64,12 @@ class Company extends Model
         }
         return $query;
     }
+
+    public function scopeOrderByField(Builder $query, ?string $sortField, ?string $sortType): Builder
+    {
+        if ($sortField && $sortType) {
+            return $query->orderBy($sortField, $sortType);
+        }
+        return $query;
+    }
 }

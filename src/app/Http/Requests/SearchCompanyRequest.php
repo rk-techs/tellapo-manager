@@ -24,6 +24,8 @@ class SearchCompanyRequest extends FormRequest
         return [
             'id'        => 'nullable|integer|min:1',
             'keyword'   => 'nullable|string|max:255',
+            'sortField' => 'nullable|in:id,name,created_at',
+            'sortType'  => 'nullable|in:asc,desc',
         ];
     }
 }
