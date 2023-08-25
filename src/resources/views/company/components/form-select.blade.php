@@ -13,7 +13,7 @@
             @foreach ($options as $option)
                 <option value="{{ $option->id }}"
                         @if(old($name, $model->{$name} ?? null) == $option->id) selected @endif>
-                    {{ $option->{$displayAttribute} }}
+                        {{ data_get($option, $displayAttribute) }}
                 </option>
             @endforeach
         </select>

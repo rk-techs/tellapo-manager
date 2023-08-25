@@ -129,7 +129,7 @@
                             'name' => 'employee_id',
                             'id' => 'employeeIdInput',
                             'options' => $employees,
-                            'displayAttribute' => 'id',
+                            'displayAttribute' => 'user.name',
                             'model' => $company,
                             'isRequired' => false,
                         ])

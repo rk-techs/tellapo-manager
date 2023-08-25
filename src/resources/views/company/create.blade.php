@@ -106,7 +106,7 @@
                             'name' => 'employee_id',
                             'id' => 'employeeIdInput',
                             'options' => $employees,
-                            'displayAttribute' => 'id',
+                            'displayAttribute' => 'user.name',
                             'isRequired' => false,
                         ])
 
