@@ -9,14 +9,15 @@
             <a href="/" class="title-link">{{ config('app.name') }} </a>
         </div>
         <div class="header-nav">
-            <div class="nav-item {{ Request::is('/') ? 'active' : '' }}">
+            <div class="nav-item {{ Request::is('home') ? 'active' : '' }}">
                 <a href="{{ route('home') }}" class="nav-link">HOME</a>
             </div>
-            <div class="nav-item"><a href="" class="nav-link">メニュー1</a></div>
-            <div class="nav-item"><a href="" class="nav-link">メニュー2</a></div>
-            <div class="nav-item"><a href="" class="nav-link">メニュー3</a></div>
-            <div class="nav-item"><a href="" class="nav-link">メニュー4</a></div>
-            <div class="nav-item"><a href="" class="nav-link">メニュー5</a></div>
+            <div class="nav-item {{ Request::is('user*') ? 'active' : '' }}">
+                <a href="{{ route('user.index') }}" class="nav-link">社員</a>
+            </div>
+            <div class="nav-item {{ Request::is('company*') ? 'active' : '' }}">
+                <a href="{{ route('company.index') }}" class="nav-link">企業</a>
+            </div>
         </div>
         <div id="userInfoModalTrigger" class="user-info">
             <div class="icon-block">
@@ -60,10 +61,8 @@
             <div class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                 <a href="{{ route('home') }}" class="nav-link">HOME</a>
             </div>
-            <div class="nav-item"><a href="" class="nav-link">メニュー1</a></div>
-            <div class="nav-item"><a href="" class="nav-link">メニュー2</a></div>
-            <div class="nav-item"><a href="" class="nav-link">メニュー3</a></div>
-            <div class="nav-item"><a href="" class="nav-link">メニュー4</a></div>
+            <div class="nav-item"><a href="{{ route('user.index') }}" class="nav-link">社員</a></div>
+            <div class="nav-item"><a href="{{ route('company.index') }}" class="nav-link">企業</a></div>
         </div>
     </div>
 </div>
