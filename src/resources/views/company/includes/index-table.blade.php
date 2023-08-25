@@ -44,7 +44,7 @@
                     <td class="td-cell u-min-w-160">{{ $company->established_at }}</td>
                     <td class="td-cell">{{ $company->corporate_number }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->prospect_rating }}</td>
-                    <td class="td-cell u-min-w-160">{{ $company->employee_id }}</td>
+                    <td class="td-cell u-min-w-160">{{ $company->employee?->user->name }}</td>
                 </tr>
             @endforeach
         </tbody>
