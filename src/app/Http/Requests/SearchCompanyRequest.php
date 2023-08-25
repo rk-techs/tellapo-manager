@@ -22,6 +22,9 @@ class SearchCompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'keyDate'   => 'nullable|in:created_at,updated_at',
+            'startDate' => 'nullable|date',
+            'endDate'   => 'nullable|date',
             'id'        => 'nullable|integer|min:1',
             'keyword'   => 'nullable|string|max:255',
             'sortField' => 'nullable|in:id,name,created_at',

@@ -11,15 +11,14 @@
             <div class="row">
                 <div class="col">
                     <div class="date-select">
-                        <input type="date" class="input-field u-w-136">
-                        <span class="u-mx-1">~</span>
-                        <input type="date" class="input-field u-mr-2 u-w-136">
-                        <select name="" id="" class="form-select u-w-96">
-                            <option value="">今日</option>
-                            <option selected value="">今月</option>
-                            <option value="">今年</option>
-                            <option value="">全期間</option>
+                        <label class="form-label u-mr-2">期間 :</label>
+                        <select name="keyDate" class="input-field u-w-96 u-mr-2 ">
+                            <option value="created_at" @selected(request('keyDate') == 'created_at')>登録日</option>
+                            <option value="updated_at" @selected(request('keyDate') == 'updated_at')>更新日</option>
                         </select>
+                        <input type="date" class="input-field u-w-136" name="startDate" value="{{ request('startDate') }}">
+                        <span class="u-mx-1">~</span>
+                        <input type="date" class="input-field u-w-136" name="endDate" value="{{ request('endDate') }}">
                     </div>
                 </div>
             </div>

@@ -17,6 +17,11 @@ class CompanyController extends Controller
         $companiesQuery = Company::query()
             ->searchById($request->get('id'))
             ->searchByKeyword($request->get('keyword'))
+            ->searchByDateRange(
+                $request->get('keyDate'),
+                $request->get('startDate'),
+                $request->get('endDate')
+            )
             ->orderByField($request->get('sortField'), $request->get('sortType'));
 
         $count     = $companiesQuery->count();

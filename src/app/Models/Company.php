@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -70,6 +71,17 @@ class Company extends Model
         if ($sortField && $sortType) {
             return $query->orderBy($sortField, $sortType);
         }
+        return $query;
+    }
+
+    public function scopeSearchByDateRange(Builder $query, ?string $dateColumn, ?string $startDate, ?string $endDate): Builder
+    {
+        if ($dateColumn && ($startDate || $endDate)) {
+            $startDate = $startDate ?? '0000-01-01';
+            $endDate   = $endDate ? Carbon::parse($endDate)->endOfDay()->toDateTimeString() : '9999-12-31 23:59:59';
+            return $query->whereBetween($dateColumn, [$startDate, $endDate]);
+        }
+
         return $query;
     }
 }
