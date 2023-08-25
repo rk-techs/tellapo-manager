@@ -26,20 +26,20 @@ Route::middleware('auth')->group(function () {
     })->name('home');
 
     // User
-    Route::get('/user', [UserController::class, 'index'])->name('user.index');
-    Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
-    Route::post('/user', [UserController::class, 'store'])->name('user.store');
-    Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
-    Route::patch('/user/{id}', [UserController::class, 'update'])->name('user.update');
-    Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+    Route::get('users', [UserController::class, 'index'])->name('user.index');
+    Route::get('users/create', [UserController::class, 'create'])->name('user.create');
+    Route::post('users', [UserController::class, 'store'])->name('user.store');
+    Route::get('users/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+    Route::patch('users/{id}', [UserController::class, 'update'])->name('user.update');
+    Route::delete('users/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 
     // Company
-    Route::get('/company', [CompanyController::class, 'index'])->name('company.index');
-    Route::get('/company/create', [CompanyController::class, 'create'])->name('company.create');
-    Route::post('/company', [CompanyController::class, 'store'])->name('company.store');
-    Route::get('/company/{id}/edit', [CompanyController::class, 'edit'])->name('company.edit');
-    Route::patch('/company/{id}', [CompanyController::class, 'update'])->name('company.update');
-    Route::delete('/company/{id}', [CompanyController::class, 'destroy'])->name('company.destroy');
+    Route::get('companies', [CompanyController::class, 'index'])->name('company.index');
+    Route::get('companies/create', [CompanyController::class, 'create'])->name('company.create');
+    Route::post('companies', [CompanyController::class, 'store'])->name('company.store');
+    Route::get('companies/{id}/edit', [CompanyController::class, 'edit'])->name('company.edit');
+    Route::patch('companies/{id}', [CompanyController::class, 'update'])->name('company.update');
+    Route::delete('companies/{id}', [CompanyController::class, 'destroy'])->name('company.destroy');
 
 });
 
