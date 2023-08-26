@@ -21,7 +21,7 @@
                     <td class="td-cell">{{ $callHistory->id }}</td>
                     <td class="td-cell">{{ $callHistory->employee->user->name }}</td>
                     <td class="td-cell">{{ $callHistory->called_at }}</td>
-                    <td class="td-cell">{{ $callHistory->result }}</td>
+                    <td class="td-cell">{{ $callHistory->result_label }}</td>
                     <td class="td-cell">{{ $callHistory->company->name }}</td>
                     <td class="td-cell">{{ $callHistory->receiver_info }}</td>
                     <td class="td-cell">{{ $callHistory->notes }}</td>
