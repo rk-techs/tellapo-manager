@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\CallHistoryResult;
+use App\Enums\CallResult;
 use App\Http\Requests\StoreCallRequest;
 use App\Models\Call;
 use App\Models\Company;
@@ -17,7 +17,7 @@ class CallController extends Controller
 
     public function create(Company $company)
     {
-        $resultLabels = CallHistoryResult::labels();
+        $resultLabels = CallResult::labels();
 
         return view('call-history.create', compact('company', 'resultLabels'));
     }

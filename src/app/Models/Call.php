@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enums\CallHistoryResult;
+use App\Enums\CallResult;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -50,6 +50,6 @@ class Call extends Model
      */
     public function getResultLabelAttribute(): ?string
     {
-        return CallHistoryResult::getLabel($this->result);
+        return CallResult::getLabel($this->result);
     }
 }
