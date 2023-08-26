@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\CallHistoryResult;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -33,5 +34,22 @@ class CallHistory extends Model
     public function employee(): BelongsTo
     {
         return $this->belongsTo(Employee::class);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Accessors
+    |--------------------------------------------------------------------------
+    |
+    */
+    
+    /**
+     * Get the label for the 'result' attribute.
+     *
+     * @return string|null
+     */
+    public function getResultLabelAttribute(): ?string
+    {
+        return CallHistoryResult::getLabel($this->result);
     }
 }
