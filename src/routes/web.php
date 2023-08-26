@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CallHistoryController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,9 @@ Route::middleware('auth')->group(function () {
     Route::get('companies/{id}/edit', [CompanyController::class, 'edit'])->name('company.edit');
     Route::patch('companies/{id}', [CompanyController::class, 'update'])->name('company.update');
     Route::delete('companies/{id}', [CompanyController::class, 'destroy'])->name('company.destroy');
+
+    // CallHistory
+    Route::get('call-histories', [CallHistoryController::class, 'index'])->name('call-history.index');
 
 });
 
