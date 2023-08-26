@@ -3,6 +3,7 @@
         <thead class="table-header">
             <tr class="table-row">
                 <th class="th-cell col-fixed">操作</th>
+                <th class="th-cell">TEL</th>
                 <th class="th-cell">会社名</th>
                 <th class="th-cell">事業所</th>
                 <th class="th-cell">郵便番号</th>
@@ -27,6 +28,9 @@
                 <tr class="table-row is-hoverable">
                     <td class="td-cell col-fixed">
                         <a href="{{ route('company.edit', ['id' => $company->id]) }}" class="btn-sm">編集</a>
+                    </td>
+                    <td class="td-cell">
+                        <a href="{{ route('call-history.create', ['company' => $company]) }}" class="btn-sm">TEL</a>
                     </td>
                     <td class="td-cell u-min-w-160">{{ $company->name }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->branch_name }}</td>
