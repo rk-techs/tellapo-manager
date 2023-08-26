@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\CallHistoryResult;
-use App\Http\Requests\StoreCallHistoryRequest;
+use App\Http\Requests\StoreCallRequest;
 use App\Models\Call;
 use App\Models\Company;
 
@@ -22,7 +22,7 @@ class CallController extends Controller
         return view('call-history.create', compact('company', 'resultLabels'));
     }
 
-    public function store(StoreCallHistoryRequest $request, Company $company)
+    public function store(StoreCallRequest $request, Company $company)
     {
         Call::create([
             'company_id'    => $company->id,
