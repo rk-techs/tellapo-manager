@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use App\Enums\CallHistoryResult;
+use App\Enums\CallResult;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class CallHistory extends Model
+class Call extends Model
 {
     use HasFactory;
 
@@ -42,7 +42,7 @@ class CallHistory extends Model
     |--------------------------------------------------------------------------
     |
     */
-    
+
     /**
      * Get the label for the 'result' attribute.
      *
@@ -50,6 +50,6 @@ class CallHistory extends Model
      */
     public function getResultLabelAttribute(): ?string
     {
-        return CallHistoryResult::getLabel($this->result);
+        return CallResult::getLabel($this->result);
     }
 }

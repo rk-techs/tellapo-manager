@@ -30,7 +30,7 @@
                         <a href="{{ route('company.edit', ['id' => $company->id]) }}" class="btn-sm">編集</a>
                     </td>
                     <td class="td-cell">
-                        <a href="{{ route('call-history.create', ['company' => $company]) }}" class="btn-sm">TEL</a>
+                        <a href="{{ route('calls.create', ['company' => $company]) }}" class="btn-sm">TEL</a>
                     </td>
                     <td class="td-cell u-min-w-160">{{ $company->name }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->branch_name }}</td>

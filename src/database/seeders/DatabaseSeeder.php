@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
                 UserSeeder::class,
                 EmployeeSeeder::class,
                 CompanySeeder::class,
-                CallHistorySeeder::class,
+                CallSeeder::class,
             ]);
         }
     }

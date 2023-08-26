@@ -44,9 +44,9 @@ class Company extends Model
         return $this->belongsTo(Employee::class);
     }
 
-    public function callHistories(): HasMany
+    public function calls(): HasMany
     {
-        return $this->hasMany(CallHistory::class);
+        return $this->hasMany(Call::class);
     }
 
     /*

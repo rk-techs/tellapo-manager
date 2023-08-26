@@ -18,8 +18,8 @@
             <div class="nav-item {{ Request::is('companies*') ? 'active' : '' }}">
                 <a href="{{ route('company.index') }}" class="nav-link">企業</a>
             </div>
-            <div class="nav-item {{ Request::is('call-histories*') ? 'active' : '' }}">
-                <a href="{{ route('call-history.index') }}" class="nav-link">TEL履歴</a>
+            <div class="nav-item {{ Request::is('calls*') ? 'active' : '' }}">
+                <a href="{{ route('calls.index') }}" class="nav-link">TEL履歴</a>
             </div>
         </div>
         <div id="userInfoModalTrigger" class="user-info">
@@ -66,7 +66,7 @@
             </div>
             <div class="nav-item"><a href="{{ route('user.index') }}" class="nav-link">社員</a></div>
             <div class="nav-item"><a href="{{ route('company.index') }}" class="nav-link">企業</a></div>
-            <div class="nav-item"><a href="{{ route('call-history.index') }}" class="nav-link">TEL履歴</a></div>
+            <div class="nav-item"><a href="{{ route('calls.index') }}" class="nav-link">TEL履歴</a></div>
         </div>
     </div>
 </div>

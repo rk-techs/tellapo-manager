@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-final class CallHistoryResult
+final class CallResult
 {
     const UNREACHABLE = 1;  // 電話不通
     const ABSENT      = 2;  // 担当者不在
