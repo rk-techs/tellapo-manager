@@ -15,7 +15,9 @@ class CompanySeeder extends Seeder
     public function run(): void
     {
         Company::factory(50)->create([
-            'employee_id' => Employee::inRandomOrder()->first(),
+            'employee_id' => function() {
+                return Employee::inRandomOrder()->first()->id;
+            },
         ]);
     }
 }
