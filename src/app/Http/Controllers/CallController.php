@@ -12,14 +12,14 @@ class CallController extends Controller
     public function index()
     {
         $calls = Call::all();
-        return view('call-history.index', compact('calls'));
+        return view('call.index', compact('calls'));
     }
 
     public function create(Company $company)
     {
         $resultLabels = CallResult::labels();
 
-        return view('call-history.create', compact('company', 'resultLabels'));
+        return view('call.create', compact('company', 'resultLabels'));
     }
 
     public function store(StoreCallRequest $request, Company $company)

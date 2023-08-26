@@ -22,7 +22,7 @@
                 <a href="{{ route('company.index') }}" class="menu-link">企業リスト</a>
             </div>
             <div class="menu-item">
-                <a href="{{ route('call-history.index') }}" class="menu-link">TEL履歴</a>
+                <a href="{{ route('calls.index') }}" class="menu-link">TEL履歴</a>
             </div>
         </div>
 

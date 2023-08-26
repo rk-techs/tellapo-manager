@@ -14,7 +14,7 @@
                 </div>
             </div>
 
-            <form id="inputForm" action="{{ route('call-history.store', ['company' => $company]) }}" method="POST">
+            <form id="inputForm" action="{{ route('calls.store', ['company' => $company]) }}" method="POST">
                 @csrf
                 <div class="input-form-block">
                     <div class="input-form-body">

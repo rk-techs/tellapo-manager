@@ -14,11 +14,11 @@
                 </div>
             </div>
 
-            {{-- @include('call-history.includes.index-search') --}}
+            {{-- @include('call.includes.index-search') --}}
 
             {{-- @include('components.alert', ['action' => session('action')]) --}}
 
-            @include('call-history.includes.index-table')
+            @include('call.includes.index-table')
 
         </div>
     </main>

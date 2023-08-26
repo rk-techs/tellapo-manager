@@ -40,9 +40,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('companies/{id}', [CompanyController::class, 'destroy'])->name('company.destroy');
 
     // Call
-    Route::get('call-histories', [CallController::class, 'index'])->name('call-history.index');
-    Route::get('companies/{company}/call-histories/create', [CallController::class, 'create'])->name('call-history.create');
-    Route::post('companies/{company}/call-histories', [CallController::class, 'store'])->name('call-history.store');
+    Route::get('calls', [CallController::class, 'index'])->name('calls.index');
+    Route::get('companies/{company}/calls/create', [CallController::class, 'create'])->name('calls.create');
+    Route::post('companies/{company}/calls', [CallController::class, 'store'])->name('calls.store');
 
 });
 
