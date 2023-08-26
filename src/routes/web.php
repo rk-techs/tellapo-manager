@@ -42,6 +42,7 @@ Route::middleware('auth')->group(function () {
     // CallHistory
     Route::get('call-histories', [CallHistoryController::class, 'index'])->name('call-history.index');
     Route::get('companies/{company}/call-histories/create', [CallHistoryController::class, 'create'])->name('call-history.create');
+    Route::post('companies/{company}/call-histories', [CallHistoryController::class, 'store'])->name('call-history.store');
 
 });
 

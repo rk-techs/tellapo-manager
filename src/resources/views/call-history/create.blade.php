@@ -14,10 +14,8 @@
                 </div>
             </div>
 
-            <form id="inputForm" action="" method="POST">
+            <form id="inputForm" action="{{ route('call-history.store', ['company' => $company]) }}" method="POST">
                 @csrf
-                <input type="hidden" name="company_id" value="{{ $company->id }}">
-                
                 <div class="input-form-block">
                     <div class="input-form-body">
 
