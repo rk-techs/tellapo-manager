@@ -13,18 +13,18 @@
             </tr>
         </thead>
         <tbody class="table-body">
-            @foreach($callHistories as $callHistory)
+            @foreach($calls as $call)
                 <tr class="table-row is-hoverable">
                     <td class="td-cell col-fixed">
                         <a href="" class="btn-sm">編集</a>
                     </td>
-                    <td class="td-cell">{{ $callHistory->id }}</td>
-                    <td class="td-cell">{{ $callHistory->employee->user->name }}</td>
-                    <td class="td-cell">{{ $callHistory->called_at }}</td>
-                    <td class="td-cell">{{ $callHistory->result_label }}</td>
-                    <td class="td-cell">{{ $callHistory->company->name }}</td>
-                    <td class="td-cell">{{ $callHistory->receiver_info }}</td>
-                    <td class="td-cell">{{ $callHistory->notes }}</td>
+                    <td class="td-cell">{{ $call->id }}</td>
+                    <td class="td-cell">{{ $call->employee->user->name }}</td>
+                    <td class="td-cell">{{ $call->called_at }}</td>
+                    <td class="td-cell">{{ $call->result_label }}</td>
+                    <td class="td-cell">{{ $call->company->name }}</td>
+                    <td class="td-cell">{{ $call->receiver_info }}</td>
+                    <td class="td-cell">{{ $call->notes }}</td>
                 </tr>
             @endforeach
         </tbody>

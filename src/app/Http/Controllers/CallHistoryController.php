@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Enums\CallHistoryResult;
 use App\Http\Requests\StoreCallHistoryRequest;
-use App\Models\CallHistory;
+use App\Models\Call;
 use App\Models\Company;
 
 class CallHistoryController extends Controller
 {
     public function index()
     {
-        $callHistories = CallHistory::all();
-        return view('call-history.index', compact('callHistories'));
+        $calls = Call::all();
+        return view('call-history.index', compact('calls'));
     }
 
     public function create(Company $company)
@@ -24,7 +24,7 @@ class CallHistoryController extends Controller
 
     public function store(StoreCallHistoryRequest $request, Company $company)
     {
-        CallHistory::create([
+        Call::create([
             'company_id'    => $company->id,
             'employee_id'   => Auth()->user()->employee->id,
             'called_at'     => now(),

@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('companies/{id}', [CompanyController::class, 'update'])->name('company.update');
     Route::delete('companies/{id}', [CompanyController::class, 'destroy'])->name('company.destroy');
 
-    // CallHistory
+    // Call
     Route::get('call-histories', [CallHistoryController::class, 'index'])->name('call-history.index');
     Route::get('companies/{company}/call-histories/create', [CallHistoryController::class, 'create'])->name('call-history.create');
     Route::post('companies/{company}/call-histories', [CallHistoryController::class, 'store'])->name('call-history.store');

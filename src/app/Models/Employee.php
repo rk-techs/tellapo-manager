@@ -35,8 +35,8 @@ class Employee extends Model
         return $this->hasMany(Company::class);
     }
 
-    public function callHistories(): HasMany
+    public function calls(): HasMany
     {
-        return $this->hasMany(CallHistory::class);
+        return $this->hasMany(Call::class);
     }
 }

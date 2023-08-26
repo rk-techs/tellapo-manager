@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('call_histories', function (Blueprint $table) {
+        Schema::create('calls', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('company_id')->comment('企業ID');
             $table->unsignedBigInteger('employee_id')->comment('TEL担当者ID');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('call_histories');
+        Schema::dropIfExists('calls');
     }
 };

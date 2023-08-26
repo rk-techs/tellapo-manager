@@ -2,20 +2,20 @@
 
 namespace Database\Seeders;
 
-use App\Models\CallHistory;
+use App\Models\Call;
 use App\Models\Company;
 use App\Models\Employee;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class CallHistorySeeder extends Seeder
+class CallSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        CallHistory::factory(30)->create([
+        Call::factory(30)->create([
             'company_id' => function() {
                 return Company::inRandomOrder()->first()->id;
             },

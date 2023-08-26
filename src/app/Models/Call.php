@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class CallHistory extends Model
+class Call extends Model
 {
     use HasFactory;
 
@@ -42,7 +42,7 @@ class CallHistory extends Model
     |--------------------------------------------------------------------------
     |
     */
-    
+
     /**
      * Get the label for the 'result' attribute.
      *
