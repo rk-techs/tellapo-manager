@@ -27,9 +27,7 @@
                 @endpush
                 更新
             </button>
-            <button class="btn btn-secondary">
-                キャンセル
-            </button>
+            <a href="{{ route('user.index') }}" class="btn btn-secondary">キャンセル</a>
             <div class="delete-form-wrapper">
                 <form id="deleteForm" action="{{ route('user.destroy', ['id' => $user->id]) }}" method="POST">
                     @csrf

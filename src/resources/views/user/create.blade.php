@@ -27,9 +27,7 @@
                 @endpush
                 保存
             </button>
-            <button class="btn btn-secondary">
-                キャンセル
-            </button>
+            <a href="{{ route('user.index') }}" class="btn btn-secondary">キャンセル</a>
         </div>
     </div>
 

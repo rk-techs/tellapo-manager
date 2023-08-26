@@ -150,9 +150,7 @@
                 @endpush
                 更新
             </button>
-            <button class="btn btn-secondary">
-                キャンセル
-            </button>
+            <a href="{{ route('company.index') }}" class="btn btn-secondary">キャンセル</a>
             <div class="delete-form-wrapper">
                 <form id="deleteForm" action="{{ route('company.destroy', ['id' => $company->id]) }}" method="POST">
                     @csrf
