@@ -7,7 +7,7 @@ use App\Http\Requests\StoreCallHistoryRequest;
 use App\Models\Call;
 use App\Models\Company;
 
-class CallHistoryController extends Controller
+class CallController extends Controller
 {
     public function index()
     {

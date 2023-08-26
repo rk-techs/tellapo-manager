@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CallHistoryController;
+use App\Http\Controllers\CallController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -40,9 +40,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('companies/{id}', [CompanyController::class, 'destroy'])->name('company.destroy');
 
     // Call
-    Route::get('call-histories', [CallHistoryController::class, 'index'])->name('call-history.index');
-    Route::get('companies/{company}/call-histories/create', [CallHistoryController::class, 'create'])->name('call-history.create');
-    Route::post('companies/{company}/call-histories', [CallHistoryController::class, 'store'])->name('call-history.store');
+    Route::get('call-histories', [CallController::class, 'index'])->name('call-history.index');
+    Route::get('companies/{company}/call-histories/create', [CallController::class, 'create'])->name('call-history.create');
+    Route::post('companies/{company}/call-histories', [CallController::class, 'store'])->name('call-history.store');
 
 });
 
