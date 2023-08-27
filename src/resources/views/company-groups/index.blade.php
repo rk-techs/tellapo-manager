@@ -13,7 +13,7 @@
                     企業グループ
                 </div>
                 <div>
-                    {{-- <a href="{{ route('company-groups.create') }}" class="btn btn-create">グループ登録</a> --}}
+                    <a href="{{ route('company-groups.create') }}" class="btn btn-create">グループ登録</a>
                 </div>
             </div>
 

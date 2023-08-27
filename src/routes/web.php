@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
 
     // CompanyGroup
     Route::get('company-groups', [CompanyGroupController::class, 'index'])->name('company-groups.index');
+    Route::get('company-groups/create', [CompanyGroupController::class, 'create'])->name('company-groups.create');
+    Route::post('company-groups', [CompanyGroupController::class, 'store'])->name('company-groups.store');
 
     // Company
     Route::get('companies', [CompanyController::class, 'index'])->name('companies.index');
