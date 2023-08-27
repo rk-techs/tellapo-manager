@@ -16,7 +16,7 @@
             @foreach($calls as $call)
                 <tr class="table-row is-hoverable">
                     <td class="td-cell col-fixed">
-                        <a href="" class="btn-sm">編集</a>
+                        <a href="{{ route('calls.edit', ['id' => $call->id]) }}" class="btn-sm">編集</a>
                     </td>
                     <td class="td-cell">{{ $call->id }}</td>
                     <td class="td-cell">{{ $call->employee->user->name }}</td>

@@ -16,7 +16,7 @@
 
             {{-- @include('call.includes.index-search') --}}
 
-            {{-- @include('components.alert', ['action' => session('action')]) --}}
+            @include('components.alert', ['action' => session('action')])
 
             @include('call.includes.index-table')
 
