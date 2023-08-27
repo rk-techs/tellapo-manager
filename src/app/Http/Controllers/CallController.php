@@ -32,6 +32,6 @@ class CallController extends Controller
             'notes'         => $request->input('notes'),
         ]);
 
-        return redirect()->route('company.index');
+        return redirect()->route('companies.index');
     }
 }

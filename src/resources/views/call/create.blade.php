@@ -68,7 +68,7 @@
                 @endpush
                 保存
             </button>
-            <a href="{{ route('company.index') }}" class="btn btn-secondary">キャンセル</a>
+            <a href="{{ route('companies.index') }}" class="btn btn-secondary">キャンセル</a>
         </div>
     </div>
 @endsection

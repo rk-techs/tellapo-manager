@@ -19,7 +19,7 @@
                 <a href="{{ route('users.index') }}" class="menu-link">社員</a>
             </div>
             <div class="menu-item">
-                <a href="{{ route('company.index') }}" class="menu-link">企業リスト</a>
+                <a href="{{ route('companies.index') }}" class="menu-link">企業リスト</a>
             </div>
             <div class="menu-item">
                 <a href="{{ route('calls.index') }}" class="menu-link">TEL履歴</a>

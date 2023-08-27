@@ -58,7 +58,7 @@ class CompanyController extends Controller
         ]);
 
         return redirect()
-            ->route('company.index')
+            ->route('companies.index')
             ->with([
                 'action'  => 'success',
                 'message' => "ID:{$company->id}を登録しました。"
@@ -72,7 +72,7 @@ class CompanyController extends Controller
         } catch (ModelNotFoundException $e) {
             Log::error($e->getMessage() . ' in CompnayController');
             return redirect()
-                ->route('company.index')
+                ->route('companies.index')
                 ->with(['action' => 'error', 'message' => 'Compnay not found...']);
         }
 
@@ -88,7 +88,7 @@ class CompanyController extends Controller
         } catch (ModelNotFoundException $e) {
             Log::error($e->getMessage() . ' in CompnayController');
             return redirect()
-                ->route('company.index')
+                ->route('companies.index')
                 ->with(['action' => 'error', 'message' => 'Compnay not found...']);
         }
 
@@ -112,7 +112,7 @@ class CompanyController extends Controller
         ]);
 
         return redirect()
-            ->route('company.index')
+            ->route('companies.index')
             ->with([
                 'action'  => 'success',
                 'message' => "ID:{$company->id}を更新しました。"
@@ -126,7 +126,7 @@ class CompanyController extends Controller
         } catch (ModelNotFoundException $e) {
             Log::error($e->getMessage() . ' in CompnayController');
             return redirect()
-                ->route('company.index')
+                ->route('companies.index')
                 ->with(['action' => 'error', 'message' => 'Compnay not found...']);
         }
 
@@ -134,7 +134,7 @@ class CompanyController extends Controller
         $company->delete();
 
         return redirect()
-            ->route('company.index')
+            ->route('companies.index')
             ->with([
                 'action'  => 'deleted',
                 'message' => "ID:{$company->id}を削除しました。"

@@ -32,12 +32,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
     // Company
-    Route::get('companies', [CompanyController::class, 'index'])->name('company.index');
-    Route::get('companies/create', [CompanyController::class, 'create'])->name('company.create');
-    Route::post('companies', [CompanyController::class, 'store'])->name('company.store');
-    Route::get('companies/{id}/edit', [CompanyController::class, 'edit'])->name('company.edit');
-    Route::patch('companies/{id}', [CompanyController::class, 'update'])->name('company.update');
-    Route::delete('companies/{id}', [CompanyController::class, 'destroy'])->name('company.destroy');
+    Route::get('companies', [CompanyController::class, 'index'])->name('companies.index');
+    Route::get('companies/create', [CompanyController::class, 'create'])->name('companies.create');
+    Route::post('companies', [CompanyController::class, 'store'])->name('companies.store');
+    Route::get('companies/{id}/edit', [CompanyController::class, 'edit'])->name('companies.edit');
+    Route::patch('companies/{id}', [CompanyController::class, 'update'])->name('companies.update');
+    Route::delete('companies/{id}', [CompanyController::class, 'destroy'])->name('companies.destroy');
 
     // Call
     Route::get('calls', [CallController::class, 'index'])->name('calls.index');

@@ -16,7 +16,7 @@
                 <a href="{{ route('users.index') }}" class="nav-link">社員</a>
             </div>
             <div class="nav-item {{ Request::is('companies*') ? 'active' : '' }}">
-                <a href="{{ route('company.index') }}" class="nav-link">企業</a>
+                <a href="{{ route('companies.index') }}" class="nav-link">企業</a>
             </div>
             <div class="nav-item {{ Request::is('calls*') ? 'active' : '' }}">
                 <a href="{{ route('calls.index') }}" class="nav-link">TEL履歴</a>
@@ -65,7 +65,7 @@
                 <a href="{{ route('home') }}" class="nav-link">HOME</a>
             </div>
             <div class="nav-item"><a href="{{ route('users.index') }}" class="nav-link">社員</a></div>
-            <div class="nav-item"><a href="{{ route('company.index') }}" class="nav-link">企業</a></div>
+            <div class="nav-item"><a href="{{ route('companies.index') }}" class="nav-link">企業</a></div>
             <div class="nav-item"><a href="{{ route('calls.index') }}" class="nav-link">TEL履歴</a></div>
         </div>
     </div>
