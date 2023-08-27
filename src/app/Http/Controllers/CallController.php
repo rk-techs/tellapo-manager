@@ -38,7 +38,12 @@ class CallController extends Controller
 
         $queryParams = session('previous_query_params', []);
 
-        return redirect()->route('companies.index', $queryParams);
+        return redirect()
+            ->route('companies.index', $queryParams)
+            ->with([
+                'action'  => 'success',
+                'message' => "ID:{$company->id} {$company->name}にTELしました。"
+            ]);
     }
 
     public function edit(Company $company, string $id)
