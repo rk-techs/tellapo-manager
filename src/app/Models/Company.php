@@ -103,4 +103,12 @@ class Company extends Model
         }
         return $query;
     }
+
+    public function scopeSearchByCompanyGroupId($query, $companyGroupId)
+    {
+        if ($companyGroupId) {
+            return $query->where('company_group_id', $companyGroupId);
+        }
+        return $query;
+    }
 }

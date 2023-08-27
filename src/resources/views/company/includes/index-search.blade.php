@@ -27,6 +27,17 @@
                     <input type="number" class="input-field" placeholder="ID" value="{{ request('id') }}" name="id">
                 </div>
                 <div class="col-2">
+                    <select name="company_group_id" class="form-select">
+                        <option value="">企業グループを選択</option>
+                        @foreach($compnayGroupsSelectors as $companyGroup)
+                            <option value="{{ $companyGroup->id }}"
+                                @if(request()->get('company_group_id') == $companyGroup->id) selected @endif>
+                                {{ $companyGroup->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-2">
                     <select name="employee_id" class="form-select">
                         <option value="">テレアポ担当を選択</option>
                         @foreach($employeeSelectors as $employee)
@@ -37,7 +48,7 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="col-9">
+                <div class="col-7">
                     <input type="text" class="input-field" placeholder="キーワード" value="{{ request('keyword') }}" name="keyword">
                 </div>
             </div>

@@ -25,16 +25,19 @@ class CompanyController extends Controller
                 $request->get('endDate')
             )
             ->searchByEmployeeId($request->get('employee_id'))
+            ->searchByCompanyGroupId($request->get('company_group_id'))
             ->orderByField($request->get('sortField'), $request->get('sortType'));
 
         // for Search field
         $employeeIds        = Company::pluck('employee_id')->unique();
         $employeeSelectors  = Employee::whereIn('id', $employeeIds)->get();
+        $compnayGroupIds           = Company::pluck('company_group_id')->unique();
+        $compnayGroupsSelectors    = CompanyGroup::whereIn('id', $compnayGroupIds)->get();
 
         $count     = $companiesQuery->count();
         $companies = $companiesQuery->simplePaginate(50)->withQueryString();
 
-        return view('company.index', compact('companies', 'count', 'employeeSelectors'));
+        return view('company.index', compact('companies', 'count', 'employeeSelectors', 'compnayGroupsSelectors'));
     }
 
     public function create()
