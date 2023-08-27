@@ -30,8 +30,11 @@ return new class extends Migration
             $table->string('corporate_number')->nullable()->comment('法人番号');
             $table->unsignedTinyInteger('prospect_rating')->nullable()->comment('見込み度');
             $table->unsignedBigInteger('employee_id')->nullable()->comment('テレアポ担当者ID');
-            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('set null');
+            $table->unsignedBigInteger('company_group_id')->nullable()->comment('企業グループID');
             $table->timestamps();
+
+            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('set null');
+            $table->foreign('company_group_id')->references('id')->on('company_groups')->onDelete('set null');;
         });
     }
 
@@ -42,6 +45,7 @@ return new class extends Migration
     {
         Schema::table('companies', function (Blueprint $table) {
             $table->dropForeign(['employee_id']);
+            $table->dropForeign(['company_group_id']);
         });
         Schema::dropIfExists('companies');
     }
