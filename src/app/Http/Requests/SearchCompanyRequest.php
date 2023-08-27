@@ -26,6 +26,8 @@ class SearchCompanyRequest extends FormRequest
             'startDate' => 'nullable|date',
             'endDate'   => 'nullable|date',
             'id'        => 'nullable|integer|min:1',
+            'employee_id'         => 'nullable|exists:employees,id',
+            'company_group_id'    => 'nullable|exists:company_groups,id',
             'keyword'   => 'nullable|string|max:255',
             'sortField' => 'nullable|in:id,name,created_at',
             'sortType'  => 'nullable|in:asc,desc',

@@ -8,6 +8,13 @@
             <span id="toggleExpandSymbol" class="material-symbols-outlined">unfold_less</span>
         </div>
         <div id="collapseSearchBody" class="search-body">
+            {{-- Validation feedback --}}
+            @if ($errors->any())
+            <div class="alert alert-error">
+                検索できない値が含まれています。
+            </div>
+            @endif
+            
             <div class="row">
                 <div class="col">
                     <div class="date-select">
