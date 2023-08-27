@@ -2,8 +2,8 @@
 
 
 .link {
-  color: inherit;
   display: inline-block;
+  text-decoration: underline;
 
   &:hover {
     color: var(--link-hover-color);
