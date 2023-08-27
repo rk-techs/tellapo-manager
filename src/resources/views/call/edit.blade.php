@@ -44,9 +44,9 @@
             </div>
 
 
-            {{-- <form id="inputForm" action="{{ route('calls.update', ['call' => $call->id]) }}" method="POST"> --}}
-                {{-- @csrf --}}
-                {{-- @method('PATCH') --}}
+            <form id="inputForm" action="{{ route('calls.update', ['id' => $call->id]) }}" method="POST">
+                @csrf
+                @method('PATCH')
                 <div class="input-form-block">
                     <div class="input-form-body">
 
@@ -103,7 +103,7 @@
 
                     </div>
                 </div>
-            {{-- </form> --}}
+            </form>
 
         </div>
     </main>

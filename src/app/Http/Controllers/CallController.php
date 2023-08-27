@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enums\CallResult;
 use App\Http\Requests\StoreCallRequest;
+use App\Http\Requests\UpdateCallRequest;
 use App\Models\Call;
 use App\Models\Company;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -52,5 +53,30 @@ class CallController extends Controller
         $resultLabels = CallResult::labels();
 
         return view('call.edit', compact('call', 'company', 'resultLabels'));
+    }
+
+    public function update(UpdateCallRequest $request, string $id)
+    {
+        try {
+            $call = Call::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            Log::error($e->getMessage() . ' in CallController');
+            return redirect()
+                ->route('calls.index')
+                ->with(['action' => 'error', 'message' => 'Calls not found...']);
+        }
+
+        $call->update([
+            'result'        => $request->input('result'),
+            'receiver_info' => $request->input('receiver_info'),
+            'notes'         => $request->input('notes'),
+        ]);
+
+        return redirect()
+            ->route('calls.index')
+            ->with([
+                'action'  => 'success',
+                'message' => "ID:{$call->id}を更新しました。"
+            ]);
     }
 }
