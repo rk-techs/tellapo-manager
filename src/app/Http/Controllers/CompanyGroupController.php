@@ -74,4 +74,25 @@ class CompanyGroupController extends Controller
             'message' => "ID:{$companyGroup->id}を更新しました。"
         ]);
     }
+
+    public function destroy(string $id)
+    {
+        try {
+            $companyGroup = CompanyGroup::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            Log::error($e->getMessage() . ' in CompanyGroupController');
+            return redirect()
+                ->route('company-groups.index')
+                ->with(['action' => 'error', 'message' => 'CompanyGroup not found...']);
+        }
+
+        $companyGroup->delete();
+
+        return redirect()
+        ->route('company-groups.index')
+        ->with([
+            'action'  => 'deleted',
+            'message' => "ID:{$companyGroup->id}を削除しました。"
+        ]);
+    }
 }

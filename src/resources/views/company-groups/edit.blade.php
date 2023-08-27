@@ -46,8 +46,8 @@
                 更新
             </button>
             <a href="{{ route('company-groups.index') }}" class="btn btn-secondary">キャンセル</a>
-            {{-- <div class="delete-form-wrapper">
-                <form id="deleteForm" action="{{ route('company-groups.destroy', ['id' => $company->id]) }}" method="POST">
+            <div class="delete-form-wrapper">
+                <form id="deleteForm" action="{{ route('company-groups.destroy', ['id' => $companyGroup->id]) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button id="deleteFormTrigger" class="icon-block">
@@ -59,7 +59,7 @@
                         </span>
                     </button>
                 </form>
-            </div> --}}
+            </div>
         </div>
     </div>
 @endsection
