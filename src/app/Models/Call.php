@@ -20,6 +20,10 @@ class Call extends Model
         'notes',
     ];
 
+    protected $casts = [
+        'called_at' => 'datetime:Y-m-d',
+    ];
+
     /*
     |--------------------------------------------------------------------------
     | Relationships
@@ -51,5 +55,10 @@ class Call extends Model
     public function getResultLabelAttribute(): ?string
     {
         return CallResult::getLabel($this->result);
+    }
+
+    public function getFormattedCalledAtAttribute(): string
+    {
+        return $this->called_at->format('Y-m-d H:i');
     }
 }
