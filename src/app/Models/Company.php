@@ -55,6 +55,11 @@ class Company extends Model
         return $this->hasMany(Call::class);
     }
 
+    public function latestCall()
+    {
+        return $this->hasOne(Call::class)->latest();
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Local Scopes
