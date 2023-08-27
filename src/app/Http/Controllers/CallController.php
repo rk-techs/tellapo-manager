@@ -79,4 +79,25 @@ class CallController extends Controller
                 'message' => "ID:{$call->id}を更新しました。"
             ]);
     }
+
+    public function destroy(string $id)
+    {
+        try {
+            $call = Call::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            Log::error($e->getMessage() . ' in CallController');
+            return redirect()
+                ->route('calls.index')
+                ->with(['action' => 'error', 'message' => 'Calls not found...']);
+        }
+
+        $call->delete();
+
+        return redirect()
+            ->route('calls.index')
+            ->with([
+                'action'  => 'deleted',
+                'message' => "ID:{$call->id}を削除しました。"
+            ]);
+    }
 }
