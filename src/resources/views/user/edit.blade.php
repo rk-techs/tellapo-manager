@@ -27,9 +27,9 @@
                 @endpush
                 更新
             </button>
-            <a href="{{ route('user.index') }}" class="btn btn-secondary">キャンセル</a>
+            <a href="{{ route('users.index') }}" class="btn btn-secondary">キャンセル</a>
             <div class="delete-form-wrapper">
-                <form id="deleteForm" action="{{ route('user.destroy', ['id' => $user->id]) }}" method="POST">
+                <form id="deleteForm" action="{{ route('users.destroy', ['id' => $user->id]) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button id="deleteFormTrigger" class="icon-block">

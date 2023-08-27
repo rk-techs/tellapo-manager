@@ -1,4 +1,4 @@
-<form id="inputForm" action="{{ route('user.update', ['id' => $user->id]) }}" method="POST">
+<form id="inputForm" action="{{ route('users.update', ['id' => $user->id]) }}" method="POST">
     @csrf
     @method('PATCH')
     <div class="input-form-block">

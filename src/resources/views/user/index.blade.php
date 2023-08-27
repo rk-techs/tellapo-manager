@@ -13,7 +13,7 @@
                     社員一覧
                 </div>
                 <div>
-                    <a href="{{ route('user.create') }}" class="btn btn-create">社員登録</a>
+                    <a href="{{ route('users.create') }}" class="btn btn-create">社員登録</a>
                 </div>
             </div>
 

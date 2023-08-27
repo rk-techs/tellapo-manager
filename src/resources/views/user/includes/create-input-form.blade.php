@@ -1,4 +1,4 @@
-<form id="inputForm" action="{{ route('user.store') }}" method="POST">
+<form id="inputForm" action="{{ route('users.store') }}" method="POST">
     @csrf
     <div class="input-form-block">
         <div class="input-form-body">

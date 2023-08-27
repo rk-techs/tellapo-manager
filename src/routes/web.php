@@ -24,12 +24,12 @@ Route::middleware('auth')->group(function () {
     })->name('home');
 
     // User
-    Route::get('users', [UserController::class, 'index'])->name('user.index');
-    Route::get('users/create', [UserController::class, 'create'])->name('user.create');
-    Route::post('users', [UserController::class, 'store'])->name('user.store');
-    Route::get('users/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
-    Route::patch('users/{id}', [UserController::class, 'update'])->name('user.update');
-    Route::delete('users/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+    Route::get('users', [UserController::class, 'index'])->name('users.index');
+    Route::get('users/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('users', [UserController::class, 'store'])->name('users.store');
+    Route::get('users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::patch('users/{id}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
     // Company
     Route::get('companies', [CompanyController::class, 'index'])->name('company.index');
