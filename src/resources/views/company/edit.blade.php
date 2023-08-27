@@ -20,7 +20,7 @@
             </div>
             @endif
 
-            <form id="inputForm" action="{{ route('company.update', ['id' => $company->id]) }}" method="POST">
+            <form id="inputForm" action="{{ route('companies.update', ['id' => $company->id]) }}" method="POST">
                 @csrf
                 @method('PATCH')
                 <div class="input-form-block">
@@ -150,9 +150,9 @@
                 @endpush
                 更新
             </button>
-            <a href="{{ route('company.index') }}" class="btn btn-secondary">キャンセル</a>
+            <a href="{{ route('companies.index') }}" class="btn btn-secondary">キャンセル</a>
             <div class="delete-form-wrapper">
-                <form id="deleteForm" action="{{ route('company.destroy', ['id' => $company->id]) }}" method="POST">
+                <form id="deleteForm" action="{{ route('companies.destroy', ['id' => $company->id]) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button id="deleteFormTrigger" class="icon-block">

@@ -14,7 +14,7 @@
                 </div>
             </div>
 
-            <form id="inputForm" action="{{ route('company.store') }}" method="POST">
+            <form id="inputForm" action="{{ route('companies.store') }}" method="POST">
                 @csrf
                 <div class="input-form-block">
                     <div class="input-form-body">
@@ -126,7 +126,7 @@
                 @endpush
                 保存
             </button>
-            <a href="{{ route('company.index') }}" class="btn btn-secondary">キャンセル</a>
+            <a href="{{ route('companies.index') }}" class="btn btn-secondary">キャンセル</a>
         </div>
     </div>
 @endsection

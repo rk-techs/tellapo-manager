@@ -1,5 +1,5 @@
 <div class="search-block">
-<form id="searchForm" method="GET" action="{{ route('user.index') }}">
+<form id="searchForm" method="GET" action="{{ route('users.index') }}">
     @push('script')
     <script src="{{ asset('js/search.js') }}"></script>
     @endpush
@@ -27,7 +27,7 @@
     <div id="collapseSearchFooter" class="search-footer">
         <div class="btn-group u-mr-3">
             <button class="btn btn-primary u-mr-3">検索開始</button>
-            <a href="{{ route('user.index') }}" class="btn btn-secondary">リセット</a>
+            <a href="{{ route('users.index') }}" class="btn btn-secondary">リセット</a>
         </div>
         {{-- Search Result --}}
         @if (!empty(request()->query()))

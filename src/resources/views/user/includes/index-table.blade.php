@@ -18,7 +18,7 @@
             @foreach ($users as $user)
             <tr class="table-row is-hoverable">
                 <td class="td-cell col-fixed">
-                    <a href="{{ route('user.edit', ['id' => $user->id]) }}" class="btn-sm">編集</a>
+                    <a href="{{ route('users.edit', ['id' => $user->id]) }}" class="btn-sm">編集</a>
                 </td>
                 <td class="td-cell u-max-w-80 u-txt-center">
                     {{ $user->id }}

@@ -13,7 +13,7 @@
                     企業リスト
                 </div>
                 <div>
-                    <a href="{{ route('company.create') }}" class="btn btn-create">企業登録</a>
+                    <a href="{{ route('companies.create') }}" class="btn btn-create">企業登録</a>
                 </div>
             </div>
 
