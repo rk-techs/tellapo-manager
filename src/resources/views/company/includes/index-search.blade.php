@@ -14,7 +14,7 @@
                 検索できない値が含まれています。
             </div>
             @endif
-            
+
             <div class="row">
                 <div class="col">
                     <div class="date-select">
@@ -55,7 +55,17 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="col-7">
+                <div class="col-2">
+                    <select class="form-select" name="result">
+                        <option value="">TEL結果を選択</option>
+                        @foreach ($resultLabels as $key => $label)
+                        <option value="{{ $key }}" @if(request()->get('result') == $key) selected @endif>
+                            {{ $label }}
+                        </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col">
                     <input type="text" class="input-field" placeholder="キーワード" value="{{ request('keyword') }}" name="keyword">
                 </div>
             </div>

@@ -117,4 +117,19 @@ class Company extends Model
         }
         return $query;
     }
+
+    public function scopeSearchLatestCallResult(Builder $query, ?int $result): Builder
+    {
+        if ($result) {
+            return $query->whereHas('calls', function ($query) use ($result) {
+                $query->where('result', $result)
+                    ->where('called_at', function ($query) {
+                        $query->selectRaw('MAX(called_at)')
+                            ->from('calls')
+                            ->whereColumn('companies.id', 'calls.company_id');
+                    });
+            });
+        }
+        return $query;
+    }
 }

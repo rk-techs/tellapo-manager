@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\CallResult;
 use App\Http\Requests\SearchCompanyRequest;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
@@ -27,6 +28,7 @@ class CompanyController extends Controller
             )
             ->searchByEmployeeId($request->get('employee_id'))
             ->searchByCompanyGroupId($request->get('company_group_id'))
+            ->searchLatestCallResult($request->get('result'))
             ->orderByField($request->get('sortField'), $request->get('sortType'));
 
         // for Search field
@@ -34,11 +36,12 @@ class CompanyController extends Controller
         $employeeSelectors  = Employee::whereIn('id', $employeeIds)->get();
         $compnayGroupIds           = Company::pluck('company_group_id')->unique();
         $compnayGroupsSelectors    = CompanyGroup::whereIn('id', $compnayGroupIds)->get();
+        $resultLabels = CallResult::labels();
 
         $count     = $companiesQuery->count();
         $companies = $companiesQuery->simplePaginate(50)->withQueryString();
 
-        return view('company.index', compact('companies', 'count', 'employeeSelectors', 'compnayGroupsSelectors'));
+        return view('company.index', compact('companies', 'count', 'employeeSelectors', 'compnayGroupsSelectors', 'resultLabels'));
     }
 
     public function create()
