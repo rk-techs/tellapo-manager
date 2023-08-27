@@ -17,6 +17,7 @@ class CompanyController extends Controller
     {
         $companiesQuery = Company::query()
             ->withCount('calls')
+            ->with('latestCall')
             ->searchById($request->get('id'))
             ->searchByKeyword($request->get('keyword'))
             ->searchByDateRange(
