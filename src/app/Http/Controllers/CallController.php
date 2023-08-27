@@ -6,6 +6,8 @@ use App\Enums\CallResult;
 use App\Http\Requests\StoreCallRequest;
 use App\Models\Call;
 use App\Models\Company;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Log;
 
 class CallController extends Controller
 {
@@ -34,5 +36,21 @@ class CallController extends Controller
         ]);
 
         return redirect()->route('companies.index');
+    }
+
+    public function edit(Company $company, string $id)
+    {
+        try {
+            $call = Call::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            Log::error($e->getMessage() . ' in CallController');
+            return redirect()
+                ->route('calls.index')
+                ->with(['action' => 'error', 'message' => 'Calls not found...']);
+        }
+
+        $resultLabels = CallResult::labels();
+
+        return view('call.edit', compact('call', 'company', 'resultLabels'));
     }
 }
