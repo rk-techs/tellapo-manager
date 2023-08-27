@@ -116,7 +116,7 @@
                 @endpush
                 更新
             </button>
-            <a href="{{ back() }}" class="btn btn-secondary">キャンセル</a>
+            <a href="{{ url()->previous() }}" class="btn btn-secondary">キャンセル</a>
             <div class="delete-form-wrapper">
                 <form id="deleteForm" action="{{ route('calls.destroy', ['id' => $call->id]) }}" method="POST">
                     @csrf
