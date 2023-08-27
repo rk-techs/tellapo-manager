@@ -26,7 +26,18 @@
                 <div class="col-1">
                     <input type="number" class="input-field" placeholder="ID" value="{{ request('id') }}" name="id">
                 </div>
-                <div class="col-11">
+                <div class="col-2">
+                    <select name="employee_id" class="form-select">
+                        <option value="">テレアポ担当を選択</option>
+                        @foreach($employeeSelectors as $employee)
+                            <option value="{{ $employee->id }}"
+                                @if(request()->get('employee_id') == $employee->id) selected @endif>
+                                {{ $employee->user->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-9">
                     <input type="text" class="input-field" placeholder="キーワード" value="{{ request('keyword') }}" name="keyword">
                 </div>
             </div>

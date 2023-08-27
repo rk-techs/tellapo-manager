@@ -90,4 +90,12 @@ class Company extends Model
 
         return $query;
     }
+
+    public function scopeSearchByEmployeeId($query, $employeeId)
+    {
+        if ($employeeId) {
+            return $query->where('employee_id', $employeeId);
+        }
+        return $query;
+    }
 }

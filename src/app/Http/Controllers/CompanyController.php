@@ -23,12 +23,17 @@ class CompanyController extends Controller
                 $request->get('startDate'),
                 $request->get('endDate')
             )
+            ->searchByEmployeeId($request->get('employee_id'))
             ->orderByField($request->get('sortField'), $request->get('sortType'));
+
+        // for Search field
+        $employeeIds        = Company::pluck('employee_id')->unique();
+        $employeeSelectors  = Employee::whereIn('id', $employeeIds)->get();
 
         $count     = $companiesQuery->count();
         $companies = $companiesQuery->simplePaginate(50)->withQueryString();
 
-        return view('company.index', compact('companies', 'count'));
+        return view('company.index', compact('companies', 'count', 'employeeSelectors'));
     }
 
     public function create()
