@@ -51,21 +51,24 @@
 
                     <div class="row">
                         <div class="col">
-                            <label for="resultInput" class="form-label">
+                            <label class="form-label u-mb-1">
                                 <span class="label-txt">結果</span>
                                 <span class="required-label">必須</span>
                             </label>
 
-                            <select id="resultInput"
-                                    class="form-select @error('result'){{ 'is-invalid' }}@enderror" name="result">
-                                <option hidden value="">選択してください</option>
-                                @foreach ($resultLabels as $key => $label)
-                                    <option value="{{ $key }}"
-                                            @if(old('result') == $key) selected @endif>
-                                            {{ $label }}
-                                    </option>
-                                @endforeach
-                            </select>
+                            @foreach ($resultLabels as $key => $label)
+                                <div class="form-check">
+                                    <input class="form-check-input @error('result'){{ 'is-invalid' }}@enderror"
+                                           type="radio"
+                                           name="result"
+                                           id="result-{{ $key }}"
+                                           value="{{ $key }}"
+                                           @if(old('result') == $key) checked @endif>
+                                    <label class="form-check-label" for="result-{{ $key }}">
+                                        {{ $label }}
+                                    </label>
+                                </div>
+                            @endforeach
 
                             @error('result')
                                 <div class="invalid-feedback">{{ $message }}</div>
