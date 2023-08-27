@@ -28,7 +28,11 @@
                         <a href="{{ route('company-groups.edit', ['id' => $companyGroup->id]) }}" class="btn-sm">編集</a>
                     </td>
                     <td class="td-cell">{{ $companyGroup->id }}</td>
-                    <td class="td-cell u-min-w-160">{{ $companyGroup->name }}</td>
+                    <td class="td-cell u-min-w-160">
+                        <a href="{{ route('companies.index', ['company_group_id' => $companyGroup->id])}}" class="link">
+                            {{ $companyGroup->name }}
+                        </a>
+                    </td>
                     <td class="td-cell">{{ $companyGroup->companies_count }}件</td>
                     <td class="td-cell u-min-w-160">{{ $companyGroup->created_at }}</td>
                     <td class="td-cell u-min-w-160">{{ $companyGroup->updated_at }}</td>
