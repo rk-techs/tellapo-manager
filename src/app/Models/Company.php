@@ -132,4 +132,13 @@ class Company extends Model
         }
         return $query;
     }
+
+    public function scopeSearchNoCalls(Builder $query, ?string $noCalls): Builder
+    {
+        if ($noCalls) {
+            $query->has('calls', 0);
+        }
+        return $query;
+    }
+
 }

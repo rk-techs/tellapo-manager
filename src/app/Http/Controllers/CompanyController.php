@@ -29,6 +29,7 @@ class CompanyController extends Controller
             ->searchByEmployeeId($request->get('employee_id'))
             ->searchByCompanyGroupId($request->get('company_group_id'))
             ->searchLatestCallResult($request->get('result'))
+            ->searchNoCalls($request->get('noCalls'))
             ->orderByField($request->get('sortField'), $request->get('sortType'));
 
         // for Search field

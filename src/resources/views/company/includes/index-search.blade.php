@@ -68,6 +68,12 @@
                 <div class="col">
                     <input type="text" class="input-field" placeholder="キーワード" value="{{ request('keyword') }}" name="keyword">
                 </div>
+                <div class="col-2">
+                    <label class="form-label">
+                        <input type="checkbox" name="noCalls" class="input-field" value="1" {{ request()->get('noCalls') ? 'checked' : '' }}>
+                        未対応のみ
+                    </label>
+                </div>
             </div>
         </div>
         <div id="collapseSearchFooter" class="search-footer">
