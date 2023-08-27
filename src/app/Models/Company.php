@@ -57,7 +57,7 @@ class Company extends Model
 
     public function latestCall()
     {
-        return $this->hasOne(Call::class)->latest();
+        return $this->hasOne(Call::class)->latest('called_at');
     }
 
     /*
