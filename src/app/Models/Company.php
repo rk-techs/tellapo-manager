@@ -44,6 +44,11 @@ class Company extends Model
         return $this->belongsTo(Employee::class);
     }
 
+    public function companyGroup(): BelongsTo
+    {
+        return $this->belongsTo(CompanyGroup::class);
+    }
+
     public function calls(): HasMany
     {
         return $this->hasMany(Call::class);

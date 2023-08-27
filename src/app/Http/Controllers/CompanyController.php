@@ -6,6 +6,7 @@ use App\Http\Requests\SearchCompanyRequest;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
 use App\Models\Company;
+use App\Models\CompanyGroup;
 use App\Models\Employee;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Log;
@@ -39,7 +40,8 @@ class CompanyController extends Controller
     public function create()
     {
         $employees = Employee::all();
-        return view('company.create', compact('employees'));
+        $companyGroups = CompanyGroup::all();
+        return view('company.create', compact('employees', 'companyGroups'));
     }
 
     public function store(StoreCompanyRequest $request)
@@ -83,8 +85,9 @@ class CompanyController extends Controller
         }
 
         $employees = Employee::all();
+        $companyGroups = CompanyGroup::all();
 
-        return view('company.edit', compact('company', 'employees'));
+        return view('company.edit', compact('company', 'employees', 'companyGroups'));
     }
 
     public function update(UpdateCompanyRequest $request, string $id)

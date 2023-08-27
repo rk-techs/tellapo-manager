@@ -135,6 +135,15 @@
                             'model' => $company,
                             'isRequired' => false,
                         ])
+                        @include('company.components.form-select', [
+                            'label' => '企業グループ',
+                            'name' => 'company_group_id',
+                            'id' => 'companyGroupIdInput',
+                            'options' => $companyGroups,
+                            'displayAttribute' => 'name',
+                            'model' => $company,
+                            'isRequired' => false,
+                        ])
 
 
                     </div>
