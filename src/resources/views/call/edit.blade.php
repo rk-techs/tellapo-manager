@@ -19,24 +19,24 @@
                     <tbody class="table-body">
                         <tr class="table-row">
                             <th class="th-cell u-w-160">ID</th>
-                            <td class="td-cell">{{ $company->id }}</td>
+                            <td class="td-cell">{{ $call->company->id }}</td>
                         </tr>
                         <tr class="table-row">
                             <th class="th-cell">企業名 / 事業所</th>
-                            <td class="td-cell">{{ $company->name }} / {{ $company->branch_name }}</td>
+                            <td class="td-cell">{{ $call->company->name }} / {{ $call->company->branch_name }}</td>
                         </tr>
                         <tr class="table-row">
                             <th class="th-cell">TEL</th>
-                            <td class="td-cell">{{ $company->tel }}</td>
+                            <td class="td-cell">{{ $call->company->tel }}</td>
                         </tr>
                         <tr class="table-row">
                             <th class="th-cell">住所</th>
-                            <td class="td-cell">{{ $company->address }}</td>
+                            <td class="td-cell">{{ $call->company->address }}</td>
                         </tr>
                         <tr class="table-row">
                             <th class="th-cell">ホームページ</th>
                             <td class="td-cell is-ellipsis">
-                                <a href="{{ $company->website }}" target="_blank" rel="noopener noreferrer" class="link">{{ $company->website }}</a>
+                                <a href="{{ $call->company->website }}" target="_blank" rel="noopener noreferrer" class="link">{{ $call->company->website }}</a>
                             </td>
                         </tr>
                     </tbody>
