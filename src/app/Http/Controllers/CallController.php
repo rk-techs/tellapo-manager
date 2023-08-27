@@ -29,6 +29,7 @@ class CallController extends Controller
             'employee_id'   => Auth()->user()->employee->id,
             'called_at'     => now(),
             'result'        => $request->input('result'),
+            'receiver_info' => $request->input('receiver_info'),
             'notes'         => $request->input('notes'),
         ]);
 

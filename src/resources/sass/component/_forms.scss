@@ -74,3 +74,22 @@
     padding: 0 4px;
   }
 }
+
+/* Checkbox, Radio
+-------------------------*/
+.form-check {
+  display: block;
+  margin-bottom: 8px;
+
+  .form-check-label {
+    color: var(--dark);
+    font-weight: bold;
+    margin-right: 4px;
+  }
+
+  @include pc-screen() {
+      display: inline-block;
+      margin-right: 8px;
+      margin-bottom: 0;
+  }
+}

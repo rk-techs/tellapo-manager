@@ -22,10 +22,8 @@ class StoreCallRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // 'employee_id'   => 'required|integer|exists:employees,id',
-            // 'called_at'     => 'required|date',
-            'result' => 'required|integer',
-            // 'receiver_info' => 'nullable|string|max:255',
+            'result'        => 'required|integer',
+            'receiver_info' => 'nullable|string|max:255',
             'notes'         => 'nullable|string',
         ];
     }
