@@ -4,6 +4,9 @@
             <tr class="table-row">
                 <th class="th-cell col-fixed">操作</th>
                 <th class="th-cell">TEL</th>
+                <th class="th-cell">ID</th>
+                <th class="th-cell">テレアポ担当</th>
+                <th class="th-cell">見込み度</th>
                 <th class="th-cell">会社名</th>
                 <th class="th-cell">事業所</th>
                 <th class="th-cell">郵便番号</th>
@@ -19,8 +22,8 @@
                 <th class="th-cell">上場</th>
                 <th class="th-cell">設立日</th>
                 <th class="th-cell">法人番号</th>
-                <th class="th-cell">見込み度</th>
-                <th class="th-cell">テレアポ担当</th>
+                <th class="th-cell">登録日</th>
+                <th class="th-cell">更新日</th>
             </tr>
         </thead>
         <tbody class="table-body">
@@ -32,6 +35,9 @@
                     <td class="td-cell">
                         <a href="{{ route('calls.create', ['company' => $company]) }}" class="btn-sm">TEL</a>
                     </td>
+                    <td class="td-cell">{{ $company->id }}</td>
+                    <td class="td-cell u-min-w-160">{{ $company->employee?->user->name }}</td>
+                    <td class="td-cell u-min-w-80">{{ $company->prospect_rating }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->name }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->branch_name }}</td>
                     <td class="td-cell u-min-w-120">{{ $company->postal_code }}</td>
@@ -47,8 +53,8 @@
                     <td class="td-cell">{{ $company->listed }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->established_at }}</td>
                     <td class="td-cell">{{ $company->corporate_number }}</td>
-                    <td class="td-cell u-min-w-160">{{ $company->prospect_rating }}</td>
-                    <td class="td-cell u-min-w-160">{{ $company->employee?->user->name }}</td>
+                    <td class="td-cell u-min-w-160">{{ $company->created_at }}</td>
+                    <td class="td-cell u-min-w-160">{{ $company->updated_at }}</td>
                 </tr>
             @endforeach
         </tbody>
