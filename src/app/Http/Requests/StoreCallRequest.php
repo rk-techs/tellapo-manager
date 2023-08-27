@@ -25,7 +25,7 @@ class StoreCallRequest extends FormRequest
             // 'employee_id'   => 'required|integer|exists:employees,id',
             // 'called_at'     => 'required|date',
             'result' => 'required|integer',
-            // 'receiver_info' => 'nullable|string|max:255',
+            'receiver_info' => 'nullable|string|max:255',
             'notes'         => 'nullable|string',
         ];
     }

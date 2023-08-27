@@ -75,6 +75,20 @@
 
                     <div class="row">
                         <div class="col">
+                            <label for="receiverInfoInput" class="form-label">
+                                <span class="label-txt">TEL相手情報</span>
+                            </label>
+                            <input type="text" id="receiverInfoInput" class="input-field @error('receiver_info'){{ 'is-invalid' }}@enderror"
+                                name="receiver_info" value="{{ old('receiver_info') }}" placeholder="例) 名前, (男性/女性), 営業担当...など">
+
+                            @error('receiver_info')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
                             <label for="notesInput" class="form-label">
                                 <span class="label-txt">備考</span>
                             </label>
