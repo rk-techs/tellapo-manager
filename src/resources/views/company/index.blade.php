@@ -23,6 +23,9 @@
 
             @include('company.includes.index-table')
 
+            {{-- Pagination Result --}}
+            {{ $companies->links('vendor.pagination.my-simple-default') }}
+
         </div>
     </main>
 @endsection
