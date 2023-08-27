@@ -109,6 +109,14 @@
                             'displayAttribute' => 'user.name',
                             'isRequired' => false,
                         ])
+                        @include('company.components.form-select', [
+                            'label' => '企業グループ',
+                            'name' => 'company_group_id',
+                            'id' => 'companyGroupIdInput',
+                            'options' => $companyGroups,
+                            'displayAttribute' => 'name',
+                            'isRequired' => false,
+                        ])
 
 
                     </div>
