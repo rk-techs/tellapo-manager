@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
                 PermissionSeeder::class,
                 UserSeeder::class,
                 EmployeeSeeder::class,
+                CompanyGroupSeeder::class,
                 CompanySeeder::class,
                 CallSeeder::class,
             ]);
