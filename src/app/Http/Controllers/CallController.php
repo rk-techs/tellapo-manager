@@ -36,7 +36,9 @@ class CallController extends Controller
             'notes'         => $request->input('notes'),
         ]);
 
-        return redirect()->route('companies.index');
+        $queryParams = session('previous_query_params', []);
+
+        return redirect()->route('companies.index', $queryParams);
     }
 
     public function edit(Company $company, string $id)

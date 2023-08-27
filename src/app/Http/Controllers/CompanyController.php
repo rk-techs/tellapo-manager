@@ -42,6 +42,9 @@ class CompanyController extends Controller
         $count     = $companiesQuery->count();
         $companies = $companiesQuery->simplePaginate(50)->withQueryString();
 
+        // Callのstore後リダイレクト時に検索結果を保持する為
+        session(['previous_query_params' => request()->query()]);
+
         return view('company.index', compact('companies', 'count', 'employeeSelectors', 'compnayGroupsSelectors', 'resultLabels'));
     }
 
