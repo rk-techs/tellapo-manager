@@ -9,6 +9,7 @@
                 <th class="th-cell">見込み度</th>
                 <th class="th-cell">TEL履歴</th>
                 <th class="th-cell">最終TEL結果</th>
+                <th class="th-cell">最終TEL日時</th>
                 <th class="th-cell">会社名</th>
                 <th class="th-cell">事業所</th>
                 <th class="th-cell">郵便番号</th>
@@ -42,6 +43,7 @@
                     <td class="td-cell u-min-w-80">{{ $company->prospect_rating }}</td>
                     <td class="td-cell u-min-w-120">{{ $company->calls_count }} 回</td>
                     <td class="td-cell u-min-w-160">{{ $company->latestCall ? $company->latestCall->result_label : '-' }}</td>
+                    <td class="td-cell u-min-w-160">{{ $company->latestCall ? $company->latestCall->called_at : '-' }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->name }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->branch_name }}</td>
                     <td class="td-cell u-min-w-120">{{ $company->postal_code }}</td>
