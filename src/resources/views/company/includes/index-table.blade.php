@@ -7,6 +7,7 @@
                 <th class="th-cell">ID</th>
                 <th class="th-cell">テレアポ担当</th>
                 <th class="th-cell">見込み度</th>
+                <th class="th-cell">TEL履歴</th>
                 <th class="th-cell">会社名</th>
                 <th class="th-cell">事業所</th>
                 <th class="th-cell">郵便番号</th>
@@ -27,7 +28,7 @@
             </tr>
         </thead>
         <tbody class="table-body">
-            @foreach($companies as $company)
+            @foreach ($companies as $company)
                 <tr class="table-row is-hoverable">
                     <td class="td-cell col-fixed">
                         <a href="{{ route('companies.edit', ['id' => $company->id]) }}" class="btn-sm">編集</a>
@@ -38,6 +39,7 @@
                     <td class="td-cell">{{ $company->id }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->employee?->user->name }}</td>
                     <td class="td-cell u-min-w-80">{{ $company->prospect_rating }}</td>
+                    <td class="td-cell u-min-w-120">{{ $company->calls_count }} 回</td>
                     <td class="td-cell u-min-w-160">{{ $company->name }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->branch_name }}</td>
                     <td class="td-cell u-min-w-120">{{ $company->postal_code }}</td>

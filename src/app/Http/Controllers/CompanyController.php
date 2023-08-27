@@ -15,6 +15,7 @@ class CompanyController extends Controller
     public function index(SearchCompanyRequest $request)
     {
         $companiesQuery = Company::query()
+            ->withCount('calls')
             ->searchById($request->get('id'))
             ->searchByKeyword($request->get('keyword'))
             ->searchByDateRange(
