@@ -142,6 +142,12 @@ class UserController extends Controller
                 ->with(['action' => 'error', 'message' => 'User not found...']);
         }
 
+        if ($user->employee->calls()->exists()) {
+            return redirect()
+                ->route('users.edit', ['id' => $user->id])
+                ->with(['action' => 'error', 'message' => 'TEL履歴が存在するため削除できません']);
+        }
+
         $user->employee->delete();
         $user->delete();
 
