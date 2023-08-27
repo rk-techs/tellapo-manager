@@ -11,7 +11,7 @@ class CallController extends Controller
 {
     public function index()
     {
-        $calls = Call::all();
+        $calls = Call::orderBy('called_at', 'DESC')->get();
         return view('call.index', compact('calls'));
     }
 
