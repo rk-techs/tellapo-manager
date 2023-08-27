@@ -14,6 +14,8 @@
                 </div>
             </div>
 
+            @include('components.alert', ['action' => session('action')])
+
             @if ($errors->any())
             <div class="alert alert-error">
                 入力エラーが{{ $errors->count() }}件あります。

@@ -136,7 +136,12 @@ class CompanyController extends Controller
                 ->with(['action' => 'error', 'message' => 'Compnay not found...']);
         }
 
-        // TODO: 子テーブル追加後に存在チェック処理を入れる
+        if ($company->calls()->exists()) {
+            return redirect()
+                ->route('companies.edit', ['id' => $company->id])
+                ->with(['action' => 'error', 'message' => 'TEL履歴が存在するため削除できません']);
+        }
+
         $company->delete();
 
         return redirect()
