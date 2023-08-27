@@ -37,7 +37,8 @@ class StoreCompanyRequest extends FormRequest
             'established_at'      => 'nullable|string|max:255',
             'corporate_number'    => 'nullable|string|max:255',
             'prospect_rating'     => 'nullable|integer|min:1|max:5',
-            'employee_id'         => 'nullable|exists:employees,id'
+            'employee_id'         => 'nullable|exists:employees,id',
+            'company_group_id'    => 'nullable|exists:company_groups,id',
         ];
     }
 
@@ -79,6 +80,7 @@ class StoreCompanyRequest extends FormRequest
             'corporate_number'      => '法人番号',
             'prospect_rating'       => '見込み度',
             'employee_id'           => 'テレアポ担当者ID',
+            'company_group_id'      => '企業グループID',
         ];
     }
 }

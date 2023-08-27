@@ -66,6 +66,7 @@ class CompanyController extends Controller
             'corporate_number'      => $request->input('corporate_number'),
             'prospect_rating'       => $request->input('prospect_rating'),
             'employee_id'           => $request->input('employee_id'),
+            'company_group_id'      => $request->input('company_group_id'),
         ]);
 
         return redirect()
@@ -121,6 +122,7 @@ class CompanyController extends Controller
             'corporate_number'      => $request->input('corporate_number'),
             'prospect_rating'       => $request->input('prospect_rating'),
             'employee_id'           => $request->input('employee_id'),
+            'company_group_id'      => $request->input('company_group_id'),
         ]);
 
         return redirect()

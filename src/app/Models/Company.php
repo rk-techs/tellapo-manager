@@ -31,6 +31,7 @@ class Company extends Model
         'corporate_number',      // 法人番号
         'prospect_rating',       // 見込み度
         'employee_id',           // テレアポ担当者ID
+        'company_group_id',      // 企業グループID
     ];
 
     /*
