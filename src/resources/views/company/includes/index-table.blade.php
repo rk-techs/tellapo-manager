@@ -34,7 +34,11 @@
                         <a href="{{ route('calls.create', ['company' => $company]) }}" class="btn-sm">TEL</a>
                     </td>
                     <td class="td-cell u-min-w-104">{{ $company->employee?->user->name }}</td>
-                    <td class="td-cell u-min-w-120">{{ $company->calls_count }} 回</td>
+                    <td class="td-cell u-min-w-120">
+                        <a href="{{ route('calls.showByCompany', ['company' => $company]) }}">
+                            {{ $company->calls_count }} 回
+                        </a>
+                    </td>
                     <td class="td-cell u-min-w-160">{{ $company->latestCall ? $company->latestCall->result_label : '-' }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->latestCall ? $company->latestCall->formatted_called_at : '-' }}</td>
                     <td class="td-cell u-min-w-80">{{ $company->prospect_rating }}</td>

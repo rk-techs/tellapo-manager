@@ -53,6 +53,7 @@ Route::middleware('auth')->group(function () {
 
     // Call
     Route::get('calls', [CallController::class, 'index'])->name('calls.index');
+    Route::get('companies/{company}/calls', [CallController::class, 'showByCompany'])->name('calls.showByCompany');
     Route::get('companies/{company}/calls/create', [CallController::class, 'create'])->name('calls.create');
     Route::post('companies/{company}/calls', [CallController::class, 'store'])->name('calls.store');
     Route::get('calls/{id}/edit', [CallController::class, 'edit'])->name('calls.edit');

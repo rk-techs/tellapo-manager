@@ -18,6 +18,12 @@ class CallController extends Controller
         return view('call.index', compact('calls'));
     }
 
+    public function showByCompany(Company $company)
+    {
+        $calls = $company->calls()->orderBy('called_at', 'DESC')->get();
+        return view('call.index', compact('calls'));
+    }
+
     public function create(Company $company)
     {
         $resultLabels = CallResult::labels();
