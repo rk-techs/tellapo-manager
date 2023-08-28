@@ -85,6 +85,22 @@ class CompanyController extends Controller
             ]);
     }
 
+    public function show(string $id)
+    {
+        try {
+            $company = Company::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            Log::error($e->getMessage() . ' in CompnayController');
+            return redirect()
+                ->route('companies.index')
+                ->with(['action' => 'error', 'message' => 'Compnay not found...']);
+        }
+
+        $calls = $company->calls;
+
+        return view('company.show', compact('company', 'calls'));
+    }
+
     public function edit(string $id)
     {
         try {
