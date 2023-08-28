@@ -21,7 +21,11 @@
                     <td class="td-cell">{{ $call->id }}</td>
                     <td class="td-cell">{{ $call->employee->user->name }}</td>
                     <td class="td-cell">{{ $call->formatted_called_at }}</td>
-                    <td class="td-cell">{{ $call->result_label }}</td>
+                    <td class="td-cell">
+                        <span class="status-label-{{ $call->result_class_name }}">
+                            {{ $call->result_label }}
+                        </span>
+                    </td>
                     <td class="td-cell">{{ $call->company->name }}</td>
                     <td class="td-cell">{{ $call->receiver_info }}</td>
                     <td class="td-cell">{{ $call->notes }}</td>

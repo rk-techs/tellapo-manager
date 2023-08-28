@@ -43,7 +43,11 @@
                         </a>
                         @endif
                     </td>
-                    <td class="td-cell u-min-w-160">{{ $company->latestCall ? $company->latestCall->result_label : '-' }}</td>
+                    <td class="td-cell u-min-w-160">
+                        <span class="status-label-{{ $company->latestCall ? $company->latestCall->result_class_name : '' }}">
+                            {{ $company->latestCall ? $company->latestCall->result_label : '-' }}
+                        </span>
+                    </td>
                     <td class="td-cell u-min-w-160">{{ $company->latestCall ? $company->latestCall->formatted_called_at : '-' }}</td>
                     <td class="td-cell u-min-w-80">{{ $company->prospect_rating }}</td>
                     <td class="td-cell">{{ $company->id }}</td>

@@ -57,6 +57,12 @@ class Call extends Model
         return CallResult::getLabel($this->result);
     }
 
+    public function getResultClassNameAttribute(): string
+    {
+        $constantName = CallResult::getConstantName($this->result);
+        return strtolower($constantName);
+    }
+
     public function getFormattedCalledAtAttribute(): string
     {
         return $this->called_at->format('Y-m-d H:i');
