@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="header-title">
-            <a href="/" class="title-link">{{ config('app.name') }} </a>
+            <a href="{{ route('home') }}" class="title-link">{{ config('app.name') }} </a>
         </div>
         <div class="header-nav">
             <div class="nav-item {{ Request::is('/') ? 'active' : '' }}">
@@ -15,8 +15,11 @@
             <div class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
                 <a href="{{ route('users.index') }}" class="nav-link">社員</a>
             </div>
+            <div class="nav-item {{ Request::is('company-groups*') ? 'active' : '' }}">
+                <a href="{{ route('company-groups.index') }}" class="nav-link">企業グループ</a>
+            </div>
             <div class="nav-item {{ Request::is('companies*') ? 'active' : '' }}">
-                <a href="{{ route('companies.index') }}" class="nav-link">企業</a>
+                <a href="{{ route('companies.index') }}" class="nav-link">企業一覧</a>
             </div>
             <div class="nav-item {{ Request::is('calls*') ? 'active' : '' }}">
                 <a href="{{ route('calls.index') }}" class="nav-link">TEL履歴</a>
@@ -37,8 +40,7 @@
                     <p><small>{{ auth()->user()->email }}</small></p>
                 </div>
                 <div class="user-info-modal-body">
-                    <div class="profile-menu">マイページ</div>
-                    <div class="profile-menu">申請</div>
+                    {{-- <div class="profile-menu">マイページ</div> --}}
                 </div>
                 <div class="user-info-modal-footer">
                     <div id="logoutFormTrigger" class="logout-form-wrapper">
@@ -65,7 +67,8 @@
                 <a href="{{ route('home') }}" class="nav-link">HOME</a>
             </div>
             <div class="nav-item"><a href="{{ route('users.index') }}" class="nav-link">社員</a></div>
-            <div class="nav-item"><a href="{{ route('companies.index') }}" class="nav-link">企業</a></div>
+            <div class="nav-item"><a href="{{ route('company-groups.index') }}" class="nav-link">企業グループ</a></div>
+            <div class="nav-item"><a href="{{ route('companies.index') }}" class="nav-link">企業一覧</a></div>
             <div class="nav-item"><a href="{{ route('calls.index') }}" class="nav-link">TEL履歴</a></div>
         </div>
     </div>
