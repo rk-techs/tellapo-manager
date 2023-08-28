@@ -40,7 +40,7 @@
                     <td class="td-cell u-min-w-80">{{ $company->prospect_rating }}</td>
                     <td class="td-cell">{{ $company->id }}</td>
                     <td class="td-cell u-min-w-160">
-                        <a href="{{ route('companies.edit', ['id' => $company->id]) }}" class="link">{{ $company->name }}</a>
+                        <a href="{{ route('companies.show', ['id' => $company->id]) }}" class="link">{{ $company->name }}</a>
                     </td>
                     <td class="td-cell u-min-w-120">{{ $company->branch_name }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->tel }}</td>
