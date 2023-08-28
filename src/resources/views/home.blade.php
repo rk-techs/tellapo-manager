@@ -15,9 +15,11 @@
         </div>
 
         <div class="menu-list">
+            @can('admin')
             <div class="menu-item">
                 <a href="{{ route('users.index') }}" class="menu-link">社員</a>
             </div>
+            @endcan
             <div class="menu-item">
                 <a href="{{ route('company-groups.index') }}" class="menu-link">企業グループ一覧</a>
             </div>

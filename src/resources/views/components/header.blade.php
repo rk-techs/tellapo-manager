@@ -12,9 +12,11 @@
             <div class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                 <a href="{{ route('home') }}" class="nav-link">HOME</a>
             </div>
+            @can('admin')
             <div class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
                 <a href="{{ route('users.index') }}" class="nav-link">社員</a>
             </div>
+            @endcan
             <div class="nav-item {{ Request::is('company-groups*') ? 'active' : '' }}">
                 <a href="{{ route('company-groups.index') }}" class="nav-link">企業グループ</a>
             </div>
@@ -66,7 +68,9 @@
             <div class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                 <a href="{{ route('home') }}" class="nav-link">HOME</a>
             </div>
+            @can('admin')
             <div class="nav-item"><a href="{{ route('users.index') }}" class="nav-link">社員</a></div>
+            @endcan
             <div class="nav-item"><a href="{{ route('company-groups.index') }}" class="nav-link">企業グループ</a></div>
             <div class="nav-item"><a href="{{ route('companies.index') }}" class="nav-link">企業一覧</a></div>
             <div class="nav-item"><a href="{{ route('calls.index') }}" class="nav-link">TEL履歴</a></div>
