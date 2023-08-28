@@ -21,14 +21,14 @@ class UserSeeder extends Seeder
 
         $password = Hash::make('testpass');
         User::factory()->create([
+            'name' => 'System Admin User',
+            'password' => $password,
+            'permission_id' => Permission::where('name', 'system-admin')->first()->id,
+        ]);
+        User::factory()->create([
             'name' => 'Admin User',
             'password' => $password,
             'permission_id' => Permission::where('name', 'admin')->first()->id,
-        ]);
-        User::factory()->create([
-            'name' => 'Approver User',
-            'password' => $password,
-            'permission_id' => Permission::where('name', 'approver')->first()->id,
         ]);
         User::factory()->create([
             'name' => 'Staff User',

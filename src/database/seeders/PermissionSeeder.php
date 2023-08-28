@@ -18,8 +18,8 @@ class PermissionSeeder extends Seeder
         }
 
         $permissions = [
-            ['level' => 1, 'name' => 'admin', 'display_name' => '管理者', 'created_at' => now()],
-            ['level' => 2, 'name' => 'approver', 'display_name' => '承認者', 'created_at' => now()],
+            ['level' => 1, 'name' => 'system-admin', 'display_name' => 'システム管理者', 'created_at' => now()],
+            ['level' => 2, 'name' => 'admin', 'display_name' => '管理者', 'created_at' => now()],
             ['level' => 3, 'name' => 'staff', 'display_name' => '担当者', 'created_at' => now()],
         ];
 
