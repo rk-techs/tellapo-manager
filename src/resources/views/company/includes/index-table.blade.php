@@ -35,9 +35,13 @@
                     </td>
                     <td class="td-cell u-min-w-104">{{ $company->employee?->user->name }}</td>
                     <td class="td-cell u-min-w-120">
-                        <a href="{{ route('calls.showByCompany', ['company' => $company]) }}">
+                        @if ($company->calls_count === 0)
+                            <span class="status-label-untouched">未対応</span>
+                        @else
+                        <a href="{{ route('calls.showByCompany', ['company' => $company]) }}" class="link">
                             {{ $company->calls_count }} 回
                         </a>
+                        @endif
                     </td>
                     <td class="td-cell u-min-w-160">{{ $company->latestCall ? $company->latestCall->result_label : '-' }}</td>
                     <td class="td-cell u-min-w-160">{{ $company->latestCall ? $company->latestCall->formatted_called_at : '-' }}</td>
