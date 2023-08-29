@@ -13,10 +13,10 @@
 .header-container {
   align-items: center;
   display: flex;
-  padding: 4px var(--sp-page-padding-x);
+  padding: 4px var(--page-padding-x);
 
   @include pc-screen() {
-    padding: 0 var(--pc-page-padding-x);
+    padding: 0 var(--page-padding-x);
   }
 
   .header-logo {

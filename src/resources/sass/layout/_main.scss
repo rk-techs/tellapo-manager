@@ -1,19 +1,14 @@
 @use '../global' as *;
 
-$mobile-padding: calc(24px + var(--header-height)) 4% 24px 4%;
-$pc-padding: calc(16px + var(--header-height)) 24px 16px 24px;
-
 .layout-main {
   background-color: var(--main-color);
   color: var(--black);
   min-height: 100vh;
 
   .main-container {
-    margin: 0 auto;
-    padding: $mobile-padding;
-
-    @include pc-screen() {
-      padding: $pc-padding;
-    }
+    padding-top: calc(var(--page-padding-y) + var(--header-height));
+    padding-bottom: var(--page-padding-y);
+    padding-left: var(--page-padding-x);
+    padding-right: var(--page-padding-x);
   }
 }

@@ -7,10 +7,6 @@
 
   .footer-container {
     text-align: center;
-    padding: 4px var(--sp-page-padding-x);
-
-    @include pc-screen() {
-      padding: 4px var(--pc-page-padding-x);
-    }
+    padding: 4px var(--page-padding-x);
   }
 }
