@@ -1,7 +1,7 @@
 <header class="layout-header">
     <div class="header-container">
         <div class="header-logo">
-            <a class="header-logo-link" href="/">
+            <a href="{{ route('home') }}" class="header-logo-link">
                 <img src="{{ asset('images/logo.svg') }}" alt="logo" class="header-logo-img">
             </a>
         </div>
