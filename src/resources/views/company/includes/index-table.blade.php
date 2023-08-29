@@ -30,14 +30,16 @@
                     <td class="td-cell col-fixed">
                         <a href="{{ route('calls.create', ['company' => $company]) }}" class="btn-sm">TEL</a>
                     </td>
-                    <td class="td-cell u-min-w-104">{{ $company->employee?->user->name }}</td>
+                    <td class="td-cell u-min-w-104">
+                        {{ $company->employee?->user->name }}
+                    </td>
                     <td class="td-cell u-min-w-120">
                         @if ($company->calls_count === 0)
                             <span class="status-label-untouched">未対応</span>
                         @else
-                        <a href="{{ route('calls.showByCompany', ['company' => $company]) }}" class="link">
-                            {{ $company->calls_count }} 回
-                        </a>
+                            <a href="{{ route('calls.showByCompany', ['company' => $company]) }}" class="link">
+                                {{ $company->calls_count }} 回
+                            </a>
                         @endif
                     </td>
                     <td class="td-cell u-min-w-160">
@@ -45,26 +47,58 @@
                             {{ $company->latestCall ? $company->latestCall->result_label : '-' }}
                         </span>
                     </td>
-                    <td class="td-cell u-min-w-160">{{ $company->latestCall ? $company->latestCall->formatted_called_at : '-' }}</td>
-                    <td class="td-cell">{{ $company->id }}</td>
                     <td class="td-cell u-min-w-160">
-                        <a href="{{ route('companies.show', ['id' => $company->id]) }}" class="link">{{ $company->name }}</a>
+                        {{ $company->latestCall ? $company->latestCall->formatted_called_at : '-' }}
                     </td>
-                    <td class="td-cell u-min-w-120">{{ $company->branch_name }}</td>
-                    <td class="td-cell u-min-w-160">{{ $company->tel }}</td>
-                    <td class="td-cell u-min-w-104">{{ $company->postal_code }}</td>
-                    <td class="td-cell is-ellipsis">{{ $company->address }}</td>
-                    <td class="td-cell">{{ $company->email }}</td>
+                    <td class="td-cell">
+                        {{ $company->id }}
+                    </td>
+                    <td class="td-cell u-min-w-160">
+                        <a href="{{ route('companies.show', ['id' => $company->id]) }}" class="link">
+                            {{ $company->name }}
+                        </a>
+                    </td>
+                    <td class="td-cell u-min-w-120">
+                        {{ $company->branch_name }}
+                    </td>
+                    <td class="td-cell u-min-w-160">
+                        {{ $company->tel }}
+                    </td>
+                    <td class="td-cell u-min-w-104">
+                        {{ $company->postal_code }}
+                    </td>
                     <td class="td-cell is-ellipsis">
-                        <a href="{{ $company->website }}" target="_blank" rel="noopener noreferrer" class="link">{{ $company->website }}</a>
+                        {{ $company->address }}
                     </td>
-                    <td class="td-cell">{{ $company->industry }}</td>
-                    <td class="td-cell">{{ $company->capital }}</td>
-                    <td class="td-cell u-min-w-80">{{ $company->number_of_employees }}</td>
-                    <td class="td-cell">{{ $company->annual_sales }}</td>
-                    <td class="td-cell">{{ $company->listed }}</td>
-                    <td class="td-cell u-min-w-160">{{ $company->established_at }}</td>
-                    <td class="td-cell">{{ $company->corporate_number }}</td>
+                    <td class="td-cell">
+                        {{ $company->email }}
+                    </td>
+                    <td class="td-cell is-ellipsis">
+                        <a href="{{ $company->website }}" target="_blank" rel="noopener noreferrer" class="link">
+                            {{ $company->website }}
+                        </a>
+                    </td>
+                    <td class="td-cell">
+                        {{ $company->industry }}
+                    </td>
+                    <td class="td-cell">
+                        {{ $company->capital }}
+                    </td>
+                    <td class="td-cell u-min-w-80">
+                        {{ $company->number_of_employees }}
+                    </td>
+                    <td class="td-cell">
+                        {{ $company->annual_sales }}
+                    </td>
+                    <td class="td-cell">
+                        {{ $company->listed }}
+                    </td>
+                    <td class="td-cell u-min-w-160">
+                        {{ $company->established_at }}
+                    </td>
+                    <td class="td-cell">
+                        {{ $company->corporate_number }}
+                    </td>
                 </tr>
             @endforeach
         </tbody>
