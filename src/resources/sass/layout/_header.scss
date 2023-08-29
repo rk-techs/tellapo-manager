@@ -15,10 +15,6 @@
   display: flex;
   padding: 4px var(--page-padding-x);
 
-  @include pc-screen() {
-    padding: 0 var(--page-padding-x);
-  }
-
   .header-logo {
     --logo-size: 32px;
 
@@ -67,7 +63,7 @@
         color: inherit;
         display: block;
         margin-right: 8px;
-        padding: 8px;
+        padding: 0 8px;
 
         &:hover {
           color: var(--white);
