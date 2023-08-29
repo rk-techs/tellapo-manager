@@ -6,7 +6,7 @@
 
 @section('content')
     <main class="layout-main">
-        <div class="main-container">
+        <div class="main-container has-bottom">
 
             <div class="content-header-block">
                 <div class="title title-h2">

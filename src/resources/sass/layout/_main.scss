@@ -10,5 +10,9 @@
     padding-bottom: var(--page-padding-y);
     padding-left: var(--page-padding-x);
     padding-right: var(--page-padding-x);
+
+    &.has-bottom {
+      padding-bottom: calc(var(--page-padding-y) + var(--layout-operation-height));
+    }
   }
 }
