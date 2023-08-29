@@ -36,4 +36,20 @@ final class CallResult
     {
         return self::labels()[$value] ?? null;
     }
+
+    /**
+     * 定数の値から対応する定数名を取得する.
+     * 状態などの定数をもとに動的にCSSクラス名を生成する際に使用する（ex. status-label-success）
+     *
+     * @param int $value
+     * @return string|null
+     */
+    public static function getConstantName(int $value): ?string
+    {
+        $reflection = new \ReflectionClass(__CLASS__);
+        $constants = $reflection->getConstants();
+
+        $constantName = array_search($value, $constants, true);
+        return $constantName !== false ? $constantName : null;
+    }
 }

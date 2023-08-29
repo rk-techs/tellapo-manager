@@ -66,7 +66,7 @@
                     </select>
                 </div>
                 <div class="col">
-                    <input type="text" class="input-field" placeholder="キーワード" value="{{ request('keyword') }}" name="keyword">
+                    <input type="text" class="input-field" placeholder="キーワード(会社名/事業所名)" value="{{ request('keyword') }}" name="keyword">
                 </div>
                 <div class="col-2">
                     <label class="form-label">
