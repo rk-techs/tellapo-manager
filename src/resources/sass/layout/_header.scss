@@ -30,6 +30,8 @@
 
   .header-title {
     margin-right: 16px;
+    overflow: hidden;
+    white-space: nowrap;
 
     .title-link {
       color: inherit;
@@ -105,6 +107,11 @@
 .user-info {
   position: relative;
   margin-left: auto;
+
+  .icon-label {
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }
 
 .user-info-modal {
