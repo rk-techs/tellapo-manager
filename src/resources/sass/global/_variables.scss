@@ -76,6 +76,9 @@
 
   /* z-index
   -------------------------*/
+  --z-index-table-cell: 100;
+  --z-index-table-header: 200;
+  --z-index-fixed-element: 500;
   --z-index-header: 800;
   --z-index-mask: 900;
   --z-index-modal: 1000;

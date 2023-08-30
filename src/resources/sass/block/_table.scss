@@ -27,7 +27,7 @@
   background-color: var(--gray-medium);
   position: sticky;
   top: 0;
-  z-index: 200;
+  z-index: var(--z-index-table-header);
 }
 
 .th-cell {
@@ -110,7 +110,7 @@
     background-color: var(--white);
     left: 0;
     position: sticky;
-    z-index: 100;
+    z-index: var(--z-index-table-cell);
   }
 }
 

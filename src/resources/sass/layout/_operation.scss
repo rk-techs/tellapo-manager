@@ -7,6 +7,7 @@
   height: var(--layout-operation-height);
   position: fixed;
   width: 100%;
+  z-index: var(--z-index-fixed-element);
 }
 
 .operation-container {
