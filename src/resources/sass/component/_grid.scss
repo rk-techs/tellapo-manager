@@ -1,4 +1,5 @@
 @use '../global' as *;
+@use "sass:math";
 
 .row {
   @include pc-screen() {
@@ -33,7 +34,7 @@
 @for $i from 1 through 12 {
   .col-#{$i} {
     @include pc-screen() {
-      width: percentage($i / 12);
+      width: percentage(math.div($i, 12));
     }
   }
 }
