@@ -1,20 +1,22 @@
-
-// Width utility classes
-@for $i from 1 through 30 {
+// Width classes: 8px to 400px
+// Examples: .u-w-8, .u-w-16, ..., .u-w-400.
+@for $i from 1 through 50 {
   .u-w-#{$i * 8} {
     width: #{$i * 8}px;
   }
 }
 
-// Min-width utility classes
-@for $i from 1 through 30 {
+// Min-width classes: 8px to 400px
+// Examples: .u-min-w-8, .u-min-w-16, ..., .u-min-w-400.
+@for $i from 1 through 50 {
   .u-min-w-#{$i * 8} {
     min-width: #{$i * 8}px;
   }
 }
 
-// Max-width utility classes
-@for $i from 1 through 30 {
+// Max-width classes: 8px to 400px
+// Examples: .u-max-w-8, .u-max-w-16, ..., .u-max-w-400.
+@for $i from 1 through 50 {
   .u-max-w-#{$i * 8} {
     max-width: #{$i * 8}px;
   }
