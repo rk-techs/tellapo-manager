@@ -35,7 +35,7 @@
                 <td class="td-cell u-min-w-120">
                     {{ $user->employee->join_date }}
                 </td>
-                <td class="td-cell u-ellipsis">
+                <td class="td-cell u-ellipsis u-max-w-240">
                     {{ $user->employee->remark }}
                 </td>
                 <td class="td-cell u-min-w-96">

@@ -35,7 +35,7 @@
                         </tr>
                         <tr class="table-row">
                             <th class="th-cell">ホームページ</th>
-                            <td class="td-cell u-ellipsis">
+                            <td class="td-cell">
                                 <a href="{{ $company->website }}" target="_blank" rel="noopener noreferrer" class="link">{{ $company->website }}</a>
                             </td>
                         </tr>

@@ -67,14 +67,14 @@
                     <td class="td-cell u-min-w-104">
                         {{ $company->postal_code }}
                     </td>
-                    <td class="td-cell u-ellipsis">
+                    <td class="td-cell u-ellipsis u-max-w-240">
                         {{ $company->address }}
                     </td>
                     <td class="td-cell">
                         {{ $company->email }}
                     </td>
                     <td class="td-cell">
-                        <a href="{{ $company->website }}" target="_blank" rel="noopener noreferrer" class="link u-ellipsis">
+                        <a href="{{ $company->website }}" target="_blank" rel="noopener noreferrer" class="link u-ellipsis u-max-w-240">
                             {{ $company->website }}
                         </a>
                     </td>
