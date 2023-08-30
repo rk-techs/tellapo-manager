@@ -7,7 +7,7 @@
     overflow-x: scroll;
     overflow-y: scroll;
     position: relative;
-    max-height: calc(100vh - var(--header-height) - 32px);
+    max-height: calc(100vh - var(--header-height) - var(--page-padding-y) - var(--page-padding-y));
   }
 }
 
@@ -30,20 +30,18 @@
   z-index: var(--z-index-table-header);
 }
 
-.th-cell {
-  border-right: 1px solid var(--gray-light);
-  border-bottom: 1px solid var(--gray-medium);
-  font-weight: bold;
-  padding: 8px 16px;
-  overflow-wrap: break-word;
-}
-
+.th-cell,
 .td-cell {
   border-right: 1px solid var(--gray-light);
   border-bottom: 1px solid var(--gray-medium);
   padding: 8px 16px;
   overflow-wrap: break-word;
 }
+
+.th-cell {
+  font-weight: bold;
+}
+
 
 /* Round the corners of the table
 -------------------------*/
@@ -77,20 +75,6 @@
           }
         }
       }
-    }
-  }
-}
-
-/* Spot styles
--------------------------*/
-.th-cell,
-.td-cell {
-
-  &.is-hidden-mobile {
-    display: none;
-
-    @include pc-screen() {
-      display: block;
     }
   }
 }
