@@ -1,0 +1,11 @@
+@use '../global' as *;
+
+/* Helper
+-------------------------*/
+
+.u-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

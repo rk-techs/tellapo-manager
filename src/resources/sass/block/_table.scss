@@ -86,13 +86,6 @@
 .th-cell,
 .td-cell {
 
-  &.is-ellipsis {
-    max-width: 240px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
   &.is-hidden-mobile {
     display: none;
 
