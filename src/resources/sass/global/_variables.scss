@@ -31,9 +31,7 @@
   --inactive: rgba(255, 255, 255, 0.5);
 
   /* Links */
-  --link: #007bff;
-  --link-color: var(--black);
-  --link-bg-color: var(--gray-medium);
+  --link: var(--blue-light);
   --link-hover-color: var(--blue);
 
   /* Buttons */
