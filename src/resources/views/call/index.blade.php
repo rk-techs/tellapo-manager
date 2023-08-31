@@ -14,7 +14,7 @@
                 </div>
             </div>
 
-            {{-- @include('call.includes.index-search') --}}
+            @include('call.includes.index-search')
 
             @include('components.alert', ['action' => session('action')])
 

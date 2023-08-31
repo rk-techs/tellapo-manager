@@ -3,19 +3,34 @@
 namespace App\Http\Controllers;
 
 use App\Enums\CallResult;
+use App\Http\Requests\SearchCallRequest;
 use App\Http\Requests\StoreCallRequest;
 use App\Http\Requests\UpdateCallRequest;
 use App\Models\Call;
 use App\Models\Company;
+use App\Models\Employee;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Log;
 
 class CallController extends Controller
 {
-    public function index()
+    public function index(SearchCallRequest $request)
     {
-        $calls = Call::orderBy('called_at', 'DESC')->get();
-        return view('call.index', compact('calls'));
+        $callsQuery = Call::query()
+            ->searchByEmployeeId($request->get('employee_id'))
+            ->searchByResult($request->get('result'))
+            ->searchByKeyword($request->get('keyword'))
+            ->orderByField($request->get('sortField'), $request->get('sortType'));
+
+        // for Search field
+        $employeeIds        = Call::pluck('employee_id')->unique();
+        $employeeSelectors  = Employee::whereIn('id', $employeeIds)->get();
+        $resultLabels = CallResult::labels();
+
+        $count = $callsQuery->count();
+        $calls = $callsQuery->get();
+
+        return view('call.index', compact('calls', 'count', 'employeeSelectors', 'resultLabels'));
     }
 
     public function showByCompany(Company $company)
