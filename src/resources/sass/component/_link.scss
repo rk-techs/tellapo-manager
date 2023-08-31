@@ -1,34 +1,20 @@
 @use '../global' as *;
 
-
 .link {
+  color: var(--link);
   display: inline-block;
   text-decoration: underline;
 
   &:hover {
     color: var(--link-hover-color);
+    cursor: pointer;
   }
-}
 
-.link-small {
-  color: inherit;
-  display: inline-block;
-  font-size: 0.9rem;
+  &.is-not-underlined {
+    text-decoration: none;
+  }
 
-  border-radius: 4px;
-  border: 1px solid var(--gray);
-  padding: 0 4px;
-}
-
-// Block style link
-.b-link {
-  background-color: #ccc;
-  color: inherit;
-  display: block;
-  margin: 8px 0;
-  padding: 8px 0;
-
-  &:hover {
-    opacity: 0.8;
+  &.is-block {
+    display: block;
   }
 }
