@@ -8,6 +8,7 @@
                 <th class="th-cell">TEL日時</th>
                 <th class="th-cell">結果</th>
                 <th class="th-cell">企業</th>
+                <th class="th-cell">事業所</th>
                 <th class="th-cell">受付情報</th>
                 <th class="th-cell">メモ</th>
             </tr>
@@ -27,6 +28,7 @@
                         </span>
                     </td>
                     <td class="td-cell u-min-w-160">{{ $call->company->name }}</td>
+                    <td class="td-cell u-min-w-120">{{ $call->company->branch_name }}</td>
                     <td class="td-cell">{{ $call->receiver_info }}</td>
                     <td class="td-cell">{{ $call->notes }}</td>
                 </tr>
