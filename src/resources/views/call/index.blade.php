@@ -20,6 +20,9 @@
 
             @include('call.includes.index-table')
 
+            {{-- Pagination Result --}}
+            {{ $calls->links('vendor.pagination.my-simple-default') }}
+
         </div>
     </main>
 @endsection

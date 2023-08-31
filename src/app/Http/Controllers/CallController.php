@@ -28,7 +28,7 @@ class CallController extends Controller
         $resultLabels = CallResult::labels();
 
         $count = $callsQuery->count();
-        $calls = $callsQuery->get();
+        $calls = $callsQuery->simplePaginate(100)->withQueryString();
 
         return view('call.index', compact('calls', 'count', 'employeeSelectors', 'resultLabels'));
     }
