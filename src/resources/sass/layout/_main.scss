@@ -4,15 +4,15 @@
   background-color: var(--main-color);
   color: var(--black);
   min-height: 100vh;
+}
 
-  .main-container {
-    padding-top: calc(var(--page-padding-y) + var(--header-height));
-    padding-bottom: var(--page-padding-y);
-    padding-left: var(--page-padding-x);
-    padding-right: var(--page-padding-x);
+.main-container {
+  padding-top: calc(var(--page-padding-y) + var(--header-height));
+  padding-bottom: var(--page-padding-y);
+  padding-left: var(--page-padding-x);
+  padding-right: var(--page-padding-x);
 
-    &.has-bottom {
-      padding-bottom: calc(var(--page-padding-y) + var(--layout-operation-height));
-    }
+  &.has-bottom {
+    padding-bottom: calc(var(--page-padding-y) + var(--layout-operation-height));
   }
 }
