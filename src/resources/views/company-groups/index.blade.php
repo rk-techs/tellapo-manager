@@ -19,7 +19,7 @@
 
             @include('components.alert', ['action' => session('action')])
 
-            @include('company-groups.includes.index-table')
+            @include('company-groups.includes.table')
 
         </div>
     </main>

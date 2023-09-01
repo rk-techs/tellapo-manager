@@ -17,11 +17,11 @@
                 </div>
             </div>
 
-            @include('company.includes.index-search')
+            @include('company.includes.search')
 
             @include('components.alert', ['action' => session('action')])
 
-            @include('company.includes.index-table')
+            @include('company.includes.table')
 
             {{-- Pagination Result --}}
             {{ $companies->links('vendor.pagination.my-simple-default') }}
