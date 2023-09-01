@@ -14,11 +14,11 @@
                 </div>
             </div>
 
-            @include('call.includes.index-search')
+            @include('call.includes.search')
 
             @include('components.alert', ['action' => session('action')])
 
-            @include('call.includes.index-table')
+            @include('call.includes.table')
 
             {{-- Pagination Result --}}
             @if ($calls instanceof \Illuminate\Pagination\AbstractPaginator && $calls->hasPages())
