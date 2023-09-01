@@ -3,7 +3,7 @@
         <thead class="table-header">
             <tr class="table-row">
                 <th class="th-cell col-fixed">{{-- 操作 --}}操作</th>
-                <th class="th-cell u-txt-center">ID</th>
+                <th class="th-cell u-text-center">ID</th>
                 <th class="th-cell">名前</th>
                 <th class="th-cell">E-mail</th>
                 <th class="th-cell">携帯番号</th>
@@ -20,7 +20,7 @@
                 <td class="td-cell col-fixed">
                     <a href="{{ route('users.edit', ['id' => $user->id]) }}" class="btn-sm">編集</a>
                 </td>
-                <td class="td-cell u-max-w-80 u-txt-center">
+                <td class="td-cell u-max-w-80 u-text-center">
                     {{ $user->id }}
                 </td>
                 <td class="td-cell u-min-w-160">
