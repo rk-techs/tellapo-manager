@@ -69,10 +69,12 @@
                     <input type="text" class="input-field" placeholder="キーワード(会社名/事業所名)" value="{{ request('keyword') }}" name="keyword">
                 </div>
                 <div class="col-2">
-                    <label class="form-label">
-                        <input type="checkbox" name="noCalls" class="input-field" value="1" {{ request()->get('noCalls') ? 'checked' : '' }}>
-                        未対応のみ
-                    </label>
+                    <div class="form-check">
+                        <input type="checkbox" name="noCalls" id="noCallsInput" class="form-check-input" value="1" {{ request()->get('noCalls') ? 'checked' : '' }}>
+                        <label for="noCallsInput" class="form-check-label">
+                            未対応のみ
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
