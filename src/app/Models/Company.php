@@ -102,7 +102,7 @@ class Company extends Model
         return $query;
     }
 
-    public function scopeSearchByEmployeeId($query, $employeeId)
+    public function scopeSearchByEmployeeId(Builder $query, ?int $employeeId): Builder
     {
         if ($employeeId) {
             return $query->where('employee_id', $employeeId);
@@ -110,7 +110,7 @@ class Company extends Model
         return $query;
     }
 
-    public function scopeSearchByCompanyGroupId($query, $companyGroupId)
+    public function scopeSearchByCompanyGroupId(Builder $query, ?int $companyGroupId): Builder
     {
         if ($companyGroupId) {
             return $query->where('company_group_id', $companyGroupId);

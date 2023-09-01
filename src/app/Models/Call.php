@@ -75,7 +75,7 @@ class Call extends Model
     |--------------------------------------------------------------------------
     |
     */
-    public function scopeSearchByEmployeeId(Builder $query, $employeeId): Builder
+    public function scopeSearchByEmployeeId(Builder $query, ?int $employeeId): Builder
     {
         if ($employeeId) {
             return $query->where('employee_id', $employeeId);
