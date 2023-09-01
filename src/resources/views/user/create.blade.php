@@ -14,7 +14,7 @@
                 </div>
             </div>
 
-            @include('user.includes.create-input-form')
+            @include('user.includes.create-form')
 
         </div>
     </main>

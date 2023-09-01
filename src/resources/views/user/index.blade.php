@@ -17,11 +17,11 @@
                 </div>
             </div>
 
-            @include('user.includes.index-search')
+            @include('user.includes.search')
 
             @include('components.alert', ['action' => session('action')])
 
-            @include('user.includes.index-table')
+            @include('user.includes.table')
 
             {{-- Pagination Result --}}
             {{ $users->links('vendor.pagination.my-simple-default') }}

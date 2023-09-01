@@ -16,7 +16,7 @@
 
             @include('components.alert', ['action' => session('action')])
 
-            @include('user.includes.edit-input-form')
+            @include('user.includes.edit-form')
 
         </div>
     </main>
