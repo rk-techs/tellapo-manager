@@ -21,7 +21,9 @@
             @include('call.includes.index-table')
 
             {{-- Pagination Result --}}
-            {{ $calls->links('vendor.pagination.my-simple-default') }}
+            @if ($calls instanceof \Illuminate\Pagination\AbstractPaginator && $calls->hasPages())
+                {{ $calls->links('vendor.pagination.my-simple-default') }}
+            @endif
 
         </div>
     </main>

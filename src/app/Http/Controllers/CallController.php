@@ -35,8 +35,13 @@ class CallController extends Controller
 
     public function showByCompany(Company $company)
     {
+        // for Search field
+        $employeeIds        = Call::pluck('employee_id')->unique();
+        $employeeSelectors  = Employee::whereIn('id', $employeeIds)->get();
+        $resultLabels = CallResult::labels();
+
         $calls = $company->calls()->orderBy('called_at', 'DESC')->get();
-        return view('call.index', compact('calls'));
+        return view('call.index', compact('calls','employeeSelectors', 'resultLabels'));
     }
 
     public function create(Company $company)
