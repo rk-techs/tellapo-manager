@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col">
         <label for="{{ $id }}" class="form-label">
-            <span class="label-txt">{{ $label }}</span>
+            <span class="label-text">{{ $label }}</span>
             @if($isRequired ?? false)
                 <span class="required-label">必須</span>
             @endif

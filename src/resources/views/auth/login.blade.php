@@ -17,13 +17,13 @@
             <div class="login-form-block">
                 <div class="login-input-row">
                     <label for="userEmailInput" class="form-label">
-                        <span class="label-txt">E-mail</span>
+                        <span class="label-text">E-mail</span>
                     </label>
                     <input id="userEmailInput" type="email" class="input-field" name="email" value="{{ old('email') }}">
                 </div>
                 <div class="login-input-row">
                     <label for="userPasswordInput" class="form-label">
-                        <span class="label-txt">Password</span>
+                        <span class="label-text">Password</span>
                     </label>
                     <input id="userPasswordInput" type="password" class="input-field" name="password">
                 </div>
@@ -31,7 +31,7 @@
                 <div class="login-input-row">
                     <label for="userRememberMeInput" class="form-label">
                         <input id="userRememberMeInput" type="checkbox" class="input-field" name="remember">
-                        <span class="label-txt">Remember me</span>
+                        <span class="label-text">Remember me</span>
                     </label>
                 </div>
 

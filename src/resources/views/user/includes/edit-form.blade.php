@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col">
                     <label for="userNameInput" class="form-label">
-                        <span class="label-txt">名前</span>
+                        <span class="label-text">名前</span>
                         <span class="required-label">必須</span>
                     </label>
                     <input id="userNameInput" type="text"
@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col">
                     <label for="userEmailInput" class="form-label">
-                        <span class="label-txt">E-mail</span>
+                        <span class="label-text">E-mail</span>
                         <span class="required-label">必須</span>
                     </label>
                     <input id="userEmailInput" type="email"
@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col">
                     <label for="userPermissionIdInput" class="form-label">
-                        <span class="label-txt">権限</span>
+                        <span class="label-text">権限</span>
                         <span class="required-label">必須</span>
                     </label>
                     <select id="userPermissionIdInput"
@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col">
                     <label for="employeeMobileNumberInput" class="form-label">
-                        <span class="label-txt">携帯番号</span>
+                        <span class="label-text">携帯番号</span>
                     </label>
                     <input id="employeeMobileNumberInput" type="text"
                         class="input-field @error('mobile_number'){{ 'is-invalid' }}@enderror" name="mobile_number"
@@ -71,7 +71,7 @@
             <div class="row">
                 <div class="col">
                     <label for="employeeRemarkInput" class="form-label">
-                        <span class="label-txt">備考</span>
+                        <span class="label-text">備考</span>
                     </label>
                     <textarea id="employeeRemarkInput" rows="5" class="input-field @error('remark'){{ 'is-invalid' }}@enderror"
                         name="remark">{{ old('remark', $user->employee->remark) }}</textarea>
@@ -83,11 +83,11 @@
 
     <div class="input-form-block">
         <div class="input-form-body">
-            <label class="form-label"><span class="label-txt">パスワードを変更する場合のみ入力</span></label>
+            <label class="form-label"><span class="label-text">パスワードを変更する場合のみ入力</span></label>
             <div class="row">
                 <div class="col">
                     <label for="userPasswordInput" class="form-label">
-                        <span class="label-txt">Password</span>
+                        <span class="label-text">Password</span>
                     </label>
                     <input id="userPasswordInput" type="password"
                         class="input-field @error('password'){{ 'is-invalid' }}@enderror" name="password">
@@ -100,7 +100,7 @@
             <div class="row">
                 <div class="col">
                     <label for="userPasswordConfirmationInput" class="form-label">
-                        <span class="label-txt">Password 再確認</span>
+                        <span class="label-text">Password 再確認</span>
                     </label>
                     <input id="userPasswordConfirmationInput" type="password" class="input-field"
                         name="password_confirmation" autocomplete="new-password" placeholder="確認">

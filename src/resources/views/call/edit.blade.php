@@ -53,7 +53,7 @@
                     <div class="row">
                         <div class="col">
                             <label class="form-label u-mb-1">
-                                <span class="label-txt">結果</span>
+                                <span class="label-text">結果</span>
                                 <span class="required-label">必須</span>
                             </label>
 
@@ -80,7 +80,7 @@
                     <div class="row">
                         <div class="col">
                             <label for="receiverInfoInput" class="form-label">
-                                <span class="label-txt">TEL相手情報</span>
+                                <span class="label-text">TEL相手情報</span>
                             </label>
                             <input type="text" id="receiverInfoInput" class="input-field @error('receiver_info'){{ 'is-invalid' }}@enderror"
                                 name="receiver_info" value="{{ old('receiver_info', $call->receiver_info) }}" placeholder="例) 名前, (男性/女性), 営業担当...など">
@@ -94,7 +94,7 @@
                     <div class="row">
                         <div class="col">
                             <label for="notesInput" class="form-label">
-                                <span class="label-txt">備考</span>
+                                <span class="label-text">備考</span>
                             </label>
                             <textarea id="notesInput" rows="5" class="input-field @error('notes'){{ 'is-invalid' }}@enderror"
                                 name="notes">{{ old('notes', $call->notes) }}</textarea>
