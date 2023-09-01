@@ -102,9 +102,10 @@
 .table-row {
   &.is-hoverable {
     &:hover {
+
       .th-cell,
       .td-cell {
-          background-color: var(--table-hover-color);
+        background-color: var(--table-hover-color);
       }
     }
   }

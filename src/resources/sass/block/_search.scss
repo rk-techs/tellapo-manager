@@ -19,6 +19,7 @@
 
     .material-symbols-outlined {
       padding: 4px;
+
       &:hover {
         background-color: var(--gray-medium);
         border-radius: 50%;
@@ -71,6 +72,7 @@
 /* Sort */
 .sort-field {
   margin-top: 16px;
+
   @include pc-screen() {
     margin-top: 0;
   }
@@ -79,9 +81,11 @@
     display: inline-block;
     white-space: nowrap;
   }
+
   .input-field {
     display: inline-block;
   }
+
   align-items: center;
   display: flex;
   margin-left: auto;
